@@ -56,7 +56,7 @@ function parseBandera(bandera: string): { titulo: string; texto: string; clases:
 function Bloque({ titulo, children }: { titulo: string; children: React.ReactNode }) {
   return (
     <section className="flex flex-col gap-2 border-t border-gray-200 pt-4 first:border-t-0 first:pt-0">
-      <h2 className="text-xs font-semibold tracking-wide text-gray-500 uppercase">{titulo}</h2>
+      <h2 className="text-sm font-semibold tracking-wide text-gray-500 uppercase">{titulo}</h2>
       {children}
     </section>
   );
@@ -72,7 +72,7 @@ function BotonCopiar({ texto }: { texto: string }) {
         setCopiado(true);
         setTimeout(() => setCopiado(false), 1500);
       }}
-      className="shrink-0 self-start rounded border border-gray-300 px-2 py-1 text-xs text-gray-600 hover:bg-gray-100"
+      className="min-h-[40px] shrink-0 self-start rounded border border-gray-300 px-3 py-2 text-sm text-gray-600 hover:bg-gray-100"
     >
       {copiado ? "Copiado" : "Copiar"}
     </button>
@@ -84,12 +84,12 @@ export default function ResultadoAnalisis({ analisis }: { analisis: Analisis }) 
     analisis;
 
   return (
-    <div className="flex flex-col gap-5 rounded-lg border border-gray-200 p-4 sm:p-5">
+    <div className="flex flex-col gap-6 rounded-lg border border-gray-200 p-4 sm:p-5">
       {bandera_seguridad &&
         (() => {
           const { titulo, texto, clases } = parseBandera(bandera_seguridad);
           return (
-            <div className={`rounded border-2 p-3 text-sm ${clases}`}>
+            <div className={`rounded border-2 p-3 text-base ${clases}`}>
               <p className="font-semibold">{titulo}</p>
               <p className="mt-1">{texto}</p>
             </div>
@@ -106,10 +106,10 @@ export default function ResultadoAnalisis({ analisis }: { analisis: Analisis }) 
           Ambigüedad {ambiguedad.nivel}
         </span>
       </div>
-      <p className="-mt-3 text-sm text-gray-500">{ambiguedad.explicacion}</p>
+      <p className="-mt-4 text-sm text-gray-500">{ambiguedad.explicacion}</p>
 
       <Bloque titulo="Lectura literal">
-        <p className="text-sm text-gray-800">{lectura_literal}</p>
+        <p className="text-base text-gray-800">{lectura_literal}</p>
       </Bloque>
 
       <Bloque titulo={interpretaciones.length > 1 ? "Interpretaciones posibles" : "Interpretación"}>
@@ -121,9 +121,9 @@ export default function ResultadoAnalisis({ analisis }: { analisis: Analisis }) 
                   Confianza {it.confianza}
                 </span>
               </div>
-              <p className="text-sm text-gray-800">{it.significado}</p>
+              <p className="text-base text-gray-800">{it.significado}</p>
               {it.senales.length > 0 && (
-                <ul className="mt-2 list-disc pl-5 text-xs text-gray-500">
+                <ul className="mt-2 list-disc pl-5 text-sm text-gray-500">
                   {it.senales.map((s, j) => (
                     <li key={j}>{s}</li>
                   ))}
@@ -133,7 +133,7 @@ export default function ResultadoAnalisis({ analisis }: { analisis: Analisis }) 
           ))}
         </div>
         {ambiguedad.nivel === "alta" && (
-          <p className="text-xs text-gray-500 italic">
+          <p className="text-sm text-gray-500 italic">
             No se puede saber con certeza desde el texto. Preguntar es una respuesta válida, no un fracaso.
           </p>
         )}
@@ -146,17 +146,17 @@ export default function ResultadoAnalisis({ analisis }: { analisis: Analisis }) 
               {ETIQUETA_URGENCIA[pedido.urgencia]}
             </span>
             {pedido.requiere_respuesta && (
-              <span className="text-xs text-gray-500">Conviene responder</span>
+              <span className="text-sm text-gray-500">Conviene responder</span>
             )}
           </div>
-          {pedido.que_pide && <p className="text-sm text-gray-800">{pedido.que_pide}</p>}
+          {pedido.que_pide && <p className="text-base text-gray-800">{pedido.que_pide}</p>}
         </Bloque>
       )}
 
       <Bloque titulo="Por qué">
         <ul className="flex flex-col gap-2">
           {por_que.map((p, i) => (
-            <li key={i} className="text-sm text-gray-800">
+            <li key={i} className="text-base text-gray-800">
               <span className="font-medium">{p.senal}</span>
               <span className="text-gray-500"> — {p.significado}</span>
             </li>
@@ -169,13 +169,13 @@ export default function ResultadoAnalisis({ analisis }: { analisis: Analisis }) 
           {respuestas.map((r, i) => (
             <div key={i} className="rounded border border-gray-200 p-3">
               <div className="mb-1 flex items-center justify-between gap-2">
-                <span className="text-xs font-semibold text-gray-500">
+                <span className="text-sm font-semibold text-gray-500">
                   {ETIQUETA_REGISTRO[r.registro] ?? r.registro}
                 </span>
                 <BotonCopiar texto={r.texto} />
               </div>
-              <p className="text-sm text-gray-900">{r.texto}</p>
-              <p className="mt-1 text-xs text-gray-500">{r.cuando_usarla}</p>
+              <p className="text-base text-gray-900">{r.texto}</p>
+              <p className="mt-1 text-sm text-gray-500">{r.cuando_usarla}</p>
             </div>
           ))}
         </div>

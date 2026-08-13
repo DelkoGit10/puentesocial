@@ -33,24 +33,24 @@ export default function Historial({
           <button
             type="button"
             onClick={onBorrar}
-            className="text-xs text-red-600 underline hover:text-red-800"
+            className="min-h-[40px] px-2 text-sm text-red-600 underline hover:text-red-800"
           >
             Borrar historial
           </button>
         )}
       </div>
 
-      <p className="text-xs text-gray-500">
+      <p className="text-sm text-gray-500">
         Todo esto se guarda solo en tu navegador, no viaja a ningún servidor.
       </p>
 
       {modoEjemplo && (
-        <div className="flex items-center justify-between rounded border border-blue-300 bg-blue-50 p-3 text-sm text-blue-900">
+        <div className="flex items-center justify-between gap-2 rounded border border-blue-300 bg-blue-50 p-3 text-sm text-blue-900">
           <span>Estos son datos de ejemplo, no tu historial real.</span>
           <button
             type="button"
             onClick={() => setModoEjemplo(false)}
-            className="shrink-0 rounded border border-blue-400 px-2 py-1 text-xs hover:bg-blue-100"
+            className="min-h-[40px] shrink-0 rounded border border-blue-400 px-3 py-2 text-sm hover:bg-blue-100"
           >
             Salir del ejemplo
           </button>
@@ -58,12 +58,12 @@ export default function Historial({
       )}
 
       {mostrado.length === 0 && (
-        <div className="flex flex-col items-start gap-2 rounded border border-gray-200 p-4 text-sm text-gray-500">
+        <div className="flex flex-col items-start gap-3 rounded border border-gray-200 p-4 text-base text-gray-500">
           <p>Todavía no consultaste ningún mensaje.</p>
           <button
             type="button"
             onClick={() => setModoEjemplo(true)}
-            className="rounded border border-gray-300 px-3 py-1.5 text-xs text-gray-700 hover:bg-gray-100"
+            className="min-h-[44px] rounded border border-gray-300 px-3 py-2 text-sm text-gray-700 hover:bg-gray-100"
           >
             Ver con datos de ejemplo
           </button>
@@ -71,7 +71,7 @@ export default function Historial({
       )}
 
       {mostrado.length > 0 && !patron.listo && (
-        <p className="rounded bg-gray-50 p-3 text-sm text-gray-600">
+        <p className="rounded bg-gray-50 p-3 text-base text-gray-600">
           Llevás {patron.elegibles} {patron.elegibles === 1 ? "mensaje" : "mensajes"}. A partir de{" "}
           {MIN_PARA_PATRON} empiezo a mostrarte tu patrón.
         </p>
@@ -91,7 +91,7 @@ export default function Historial({
             ))}
           </ul>
           {patron.excluidosPorSeguridad > 0 && (
-            <p className="mt-3 text-xs text-gray-400">
+            <p className="mt-3 text-sm text-gray-400">
               No cuenta {patron.excluidosPorSeguridad === 1 ? "la consulta" : "las consultas"} con
               alerta de seguridad: esas no son una estadística de estilo de comunicación.
             </p>
@@ -109,7 +109,7 @@ export default function Historial({
                   type="button"
                   onClick={() => setExpandidoId(abierto ? null : h.id)}
                   aria-expanded={abierto}
-                  className="flex w-full items-center justify-between gap-3 px-3 py-2 text-left text-sm hover:bg-gray-50"
+                  className="flex min-h-[52px] w-full items-center justify-between gap-3 px-3 py-3 text-left text-sm hover:bg-gray-50"
                 >
                   <div className="flex min-w-0 items-center gap-2">
                     {h.tuvoBanderaSeguridad && (
@@ -117,7 +117,7 @@ export default function Historial({
                         ●
                       </span>
                     )}
-                    <span className="truncate text-gray-700">{h.mensaje}</span>
+                    <span className="truncate text-base text-gray-700">{h.mensaje}</span>
                   </div>
                   <div className="flex shrink-0 items-center gap-2 text-xs text-gray-400">
                     <span>{ETIQUETA_CATEGORIA[h.categoria]}</span>
@@ -130,7 +130,7 @@ export default function Historial({
                     {h.analisis ? (
                       <ResultadoAnalisis analisis={h.analisis} />
                     ) : (
-                      <p className="text-xs text-gray-400">
+                      <p className="text-sm text-gray-400">
                         Esta consulta se guardó antes de que existiera el detalle completo, así que
                         no quedó registrado. Las que hagas de ahora en más sí van a quedar.
                       </p>
