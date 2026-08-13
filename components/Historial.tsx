@@ -5,6 +5,7 @@ import type { EntradaHistorial } from "@/lib/types";
 import { ETIQUETA_CATEGORIA } from "@/lib/types";
 import { calcularPatron, MIN_PARA_PATRON } from "@/lib/patron";
 import { generarDatosEjemplo } from "@/lib/datosEjemplo";
+import ResultadoAnalisis from "@/components/ResultadoAnalisis";
 
 function formatearFecha(ts: number): string {
   return new Date(ts).toLocaleDateString("es-AR", { day: "2-digit", month: "short" });
@@ -18,6 +19,7 @@ export default function Historial({
   onBorrar: () => void;
 }) {
   const [modoEjemplo, setModoEjemplo] = useState(false);
+  const [expandidoId, setExpandidoId] = useState<string | null>(null);
   const datosEjemplo = useMemo(() => generarDatosEjemplo(), []);
 
   const mostrado = modoEjemplo ? datosEjemplo : historial;
@@ -99,25 +101,45 @@ export default function Historial({
 
       {mostrado.length > 0 && (
         <ul className="flex flex-col gap-2">
-          {mostrado.map((h) => (
-            <li
-              key={h.id}
-              className="flex items-center justify-between gap-3 rounded border border-gray-100 px-3 py-2 text-sm"
-            >
-              <div className="flex min-w-0 items-center gap-2">
-                {h.tuvoBanderaSeguridad && (
-                  <span className="shrink-0 text-red-500" title="Tuvo alerta de seguridad">
-                    ●
-                  </span>
+          {mostrado.map((h) => {
+            const abierto = expandidoId === h.id;
+            return (
+              <li key={h.id} className="rounded border border-gray-100">
+                <button
+                  type="button"
+                  onClick={() => setExpandidoId(abierto ? null : h.id)}
+                  aria-expanded={abierto}
+                  className="flex w-full items-center justify-between gap-3 px-3 py-2 text-left text-sm hover:bg-gray-50"
+                >
+                  <div className="flex min-w-0 items-center gap-2">
+                    {h.tuvoBanderaSeguridad && (
+                      <span className="shrink-0 text-red-500" title="Tuvo alerta de seguridad">
+                        ●
+                      </span>
+                    )}
+                    <span className="truncate text-gray-700">{h.mensaje}</span>
+                  </div>
+                  <div className="flex shrink-0 items-center gap-2 text-xs text-gray-400">
+                    <span>{ETIQUETA_CATEGORIA[h.categoria]}</span>
+                    <span>{formatearFecha(h.fecha)}</span>
+                    <span className={`transition-transform ${abierto ? "rotate-180" : ""}`}>▾</span>
+                  </div>
+                </button>
+                {abierto && (
+                  <div className="border-t border-gray-100 p-3">
+                    {h.analisis ? (
+                      <ResultadoAnalisis analisis={h.analisis} />
+                    ) : (
+                      <p className="text-xs text-gray-400">
+                        Esta consulta se guardó antes de que existiera el detalle completo, así que
+                        no quedó registrado. Las que hagas de ahora en más sí van a quedar.
+                      </p>
+                    )}
+                  </div>
                 )}
-                <span className="truncate text-gray-700">{h.mensaje}</span>
-              </div>
-              <div className="flex shrink-0 items-center gap-2 text-xs text-gray-400">
-                <span>{ETIQUETA_CATEGORIA[h.categoria]}</span>
-                <span>{formatearFecha(h.fecha)}</span>
-              </div>
-            </li>
-          ))}
+              </li>
+            );
+          })}
         </ul>
       )}
     </section>

@@ -101,6 +101,12 @@ export interface EntradaHistorial {
   categoria: Categoria;
   ambiguedad: NivelAmbiguedad;
   tuvoBanderaSeguridad: boolean;
+  /**
+   * Análisis completo, para poder ver el detalle de vuelta al hacer click.
+   * Opcional porque las entradas guardadas antes de agregar este campo no
+   * lo tienen — hay que seguir mostrándolas sin romper.
+   */
+  analisis?: Analisis;
 }
 
 export const LIMITES = {

@@ -56,6 +56,7 @@ export default function Home() {
           categoria: analisis.categoria,
           ambiguedad: analisis.ambiguedad.nivel,
           tuvoBanderaSeguridad: !!analisis.bandera_seguridad,
+          analisis,
         });
         const actualizado = [nueva, ...historial];
         setHistorial(actualizado);
