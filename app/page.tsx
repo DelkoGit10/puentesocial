@@ -87,14 +87,14 @@ export default function Home() {
           minLength={2}
           maxLength={1200}
           placeholder="El mensaje que recibiste..."
-          className="min-h-24 rounded border p-2"
+          className="min-h-24 w-full rounded border border-gray-300 bg-white p-2 text-gray-900 placeholder:text-gray-400"
           value={form.mensaje}
           onChange={(e) => setForm({ ...form, mensaje: e.target.value })}
         />
         <div className="flex gap-3">
           <select
             required
-            className="flex-1 rounded border p-2 text-gray-900"
+            className="min-w-0 flex-1 rounded border border-gray-300 bg-white p-2 text-gray-900"
             value={form.relacion}
             onChange={(e) => setForm({ ...form, relacion: e.target.value as EntradaAnalisis["relacion"] })}
           >
@@ -108,8 +108,8 @@ export default function Home() {
             ))}
           </select>
           <input
-            placeholder="Canal (WhatsApp, mail, Slack...)"
-            className="flex-1 rounded border p-2"
+            placeholder="Canal (WhatsApp...)"
+            className="min-w-0 flex-1 rounded border border-gray-300 bg-white p-2 text-gray-900 placeholder:text-gray-400"
             value={form.canal}
             onChange={(e) => setForm({ ...form, canal: e.target.value })}
           />
@@ -117,7 +117,7 @@ export default function Home() {
         <textarea
           maxLength={400}
           placeholder="¿Qué pasó antes? (opcional)"
-          className="min-h-16 rounded border p-2"
+          className="min-h-16 w-full rounded border border-gray-300 bg-white p-2 text-gray-900 placeholder:text-gray-400"
           value={form.contexto}
           onChange={(e) => setForm({ ...form, contexto: e.target.value })}
         />
