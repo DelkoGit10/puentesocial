@@ -1,0 +1,2711 @@
+[
+  {
+    "id": 1,
+    "mensaje": "Bárbaro, justo lo que necesitaba hoy.",
+    "categoria_esperada": "ironia",
+    "categoria_obtenida": "ironia",
+    "ambiguedad_esperada": "baja",
+    "ambiguedad_obtenida": "baja",
+    "intencion_esperada": "Está frustrado, no agradecido. No espera respuesta, descarga.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "baja",
+        "explicacion": "El contexto hace casi imposible la lectura literal: nadie recibe una caída de servidor como algo que 'necesitaba'. La ironía es la lectura dominante con señales claras."
+      },
+      "lectura_literal": "La persona dice que la noticia es excelente y que era exactamente lo que necesitaba en este momento.",
+      "interpretaciones": [
+        {
+          "significado": "Está expresando fastidio o frustración por la mala noticia, usando ironía. Básicamente dice: 'qué bajón, justo hoy'.",
+          "confianza": "alta",
+          "senales": [
+            "\"justo lo que necesitaba hoy\": fórmula irónica clásica para situaciones negativas.",
+            "\"Bárbaro\": elogio que choca directamente con el contexto (caída de servidor + rehacer deploy).",
+            "La combinación de ambas palabras positivas ante una noticia objetivamente mala es la señal de inversión de sentido."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": false,
+        "que_pide": null,
+        "requiere_respuesta": false,
+        "urgencia": "ninguna"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Sí, un bajón. Arranco con el deploy ahora.",
+          "cuando_usarla": "Si tenés buena onda con el compañero y querés reconocer el fastidio sin darle más vueltas."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Lo sé, mala hora. Ya estoy viendo cómo resolverlo.",
+          "cuando_usarla": "Si preferís mantener un tono más neutro y enfocarte en la solución."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "¿Necesitás que te avise cuando el deploy esté listo o hay algo más que tengas que hacer vos?",
+          "cuando_usarla": "Si no sabés si él tiene que hacer algo de su lado y querés coordinar antes de arrancar."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "\"Bárbaro\"",
+          "significado": "Elogio que contradice completamente el contexto negativo. Es la primera señal de inversión irónica."
+        },
+        {
+          "senal": "\"justo lo que necesitaba hoy\"",
+          "significado": "Fórmula irónica muy común en español rioplatense para expresar fastidio ante algo inoportuno. Nadie 'necesita' una caída de servidor."
+        }
+      ],
+      "categoria": "ironia",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 2,
+    "mensaje": "No, tranqui, total tengo todo el tiempo del mundo.",
+    "categoria_esperada": "ironia",
+    "categoria_obtenida": "ironia",
+    "ambiguedad_esperada": "baja",
+    "ambiguedad_obtenida": "baja",
+    "intencion_esperada": "Sí le molesta la demora y sí hay urgencia real. 'Tranqui' significa lo contrario.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "baja",
+        "explicacion": "La exageración imposible combinada con el contexto hace que la ironía sea casi segura."
+      },
+      "lectura_literal": "La persona dice que no hay problema y que dispone de todo el tiempo que necesita.",
+      "interpretaciones": [
+        {
+          "significado": "Está molesto o incómodo con la demora, y lo expresa al revés: fingiendo que no le importa cuando sí le importa.",
+          "confianza": "alta",
+          "senales": [
+            "\"total tengo todo el tiempo del mundo\": nadie tiene literalmente todo el tiempo del mundo; la exageración imposible es la señal clásica de ironía.",
+            "\"tranqui\": dicho junto a la exageración, funciona como atenuador que en realidad amplifica el sarcasmo.",
+            "Contexto: le avisaste que vas a tardar más de lo acordado, lo que le genera un impacto real en su trabajo."
+          ]
+        },
+        {
+          "significado": "Genuinamente no le afecta el cambio de fecha y lo dice sin ironía.",
+          "confianza": "baja",
+          "senales": [
+            "No hay signos de exclamación ni emojis que refuercen el sarcasmo.",
+            "Podría ser que realmente no tenga urgencia con tu parte."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": true,
+        "que_pide": "Que cumplas mañana sin más demoras, o idealmente que reconsideres y entregues antes.",
+        "requiere_respuesta": true,
+        "urgencia": "media"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Entiendo que te complica. Hago lo posible para mandártelo esta tarde.",
+          "cuando_usarla": "Si podés adelantar la entrega y querés resolver el problema de raíz."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Mañana a primera hora te lo mando sin falta.",
+          "cuando_usarla": "Si no podés entregar antes pero querés dar una señal de compromiso claro."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "¿Te genera algún problema que sea mañana? Si hay urgencia me avisás y veo cómo acomodarme.",
+          "cuando_usarla": "Si no estás seguro de si realmente le afecta y preferís que lo diga abiertamente."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "\"total tengo todo el tiempo del mundo\"",
+          "significado": "Exageración imposible: nadie tiene todo el tiempo del mundo. Cuando algo es literalmente imposible, casi siempre es ironía."
+        },
+        {
+          "senal": "\"tranqui\" + exageración juntos",
+          "significado": "Combinar una palabra de calma con una hipérbole crea una contradicción interna que refuerza el sarcasmo."
+        },
+        {
+          "senal": "Contexto: le avisaste que vas a demorar",
+          "significado": "El mensaje llega justo después de una noticia que le afecta. Eso hace muy poco probable que sea genuinamente indiferente."
+        }
+      ],
+      "categoria": "ironia",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 3,
+    "mensaje": "Qué grande, avisaste con muchísima anticipación.",
+    "categoria_esperada": "ironia",
+    "categoria_obtenida": "ironia",
+    "ambiguedad_esperada": "baja",
+    "ambiguedad_obtenida": "baja",
+    "intencion_esperada": "Reproche irónico. Está molesto y corresponde disculparse, no agradecer.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "baja",
+        "explicacion": "El contexto hace casi imposible la lectura literal: cancelar 20 minutos antes no es avisar con anticipación. La exageración es la señal de ironía."
+      },
+      "lectura_literal": "Tu amigo dice que avisaste con mucha anticipación y que eso es algo grande, positivo.",
+      "interpretaciones": [
+        {
+          "significado": "Tu amigo está molesto porque cancelaste muy tarde. Lo dice al revés, con ironía, para marcar que 20 minutos no es anticipación.",
+          "confianza": "alta",
+          "senales": [
+            "\"muchísima anticipación\": exageración imposible dado el contexto (20 minutos antes no es anticipación).",
+            "\"Qué grande\": elogio que no tiene sustancia real, refuerza la inversión irónica."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": true,
+        "que_pide": "Reconocimiento de que cancelar tan tarde estuvo mal. No lo dice directo, pero el tono pide que lo notes.",
+        "requiere_respuesta": true,
+        "urgencia": "media"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Sí, la cagué. Perdón, fue muy tarde para avisar.",
+          "cuando_usarla": "Si querés reconocer el error sin vueltas y cerrar el tema rápido."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Sé que avisé tarde, lo siento. ¿Quedamos para otro día?",
+          "cuando_usarla": "Si querés reconocer el error y al mismo tiempo mostrar que querés rearmar el plan."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "Entiendo que te molestó, y tiene sentido. ¿Estás enojado?",
+          "cuando_usarla": "Si no estás seguro de cuánto le afectó y preferís que él lo diga con palabras antes de seguir."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "\"muchísima anticipación\"",
+          "significado": "Exageración imposible: 20 minutos antes no es anticipación. Eso invierte el sentido de la frase."
+        },
+        {
+          "senal": "\"Qué grande\"",
+          "significado": "Elogio sin sustancia que, combinado con la exageración, confirma la ironía. No es un cumplido real."
+        }
+      ],
+      "categoria": "ironia",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 4,
+    "mensaje": "Me encanta cuando pasa esto.",
+    "categoria_esperada": "ironia",
+    "categoria_obtenida": "ironia",
+    "ambiguedad_esperada": "baja",
+    "ambiguedad_obtenida": "baja",
+    "intencion_esperada": "Fastidio compartido con el proceso, no con el usuario.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "baja",
+        "explicacion": "El contexto hace casi imposible la lectura literal: nadie expresa entusiasmo genuino ante el tercer cambio de requisitos en una semana."
+      },
+      "lectura_literal": "La persona dice que le gusta o disfruta cuando ocurre esto.",
+      "interpretaciones": [
+        {
+          "significado": "Está expresando fastidio o hartazgo por el tercer cambio de requisitos. El 'me encanta' es lo opuesto de lo que siente.",
+          "confianza": "alta",
+          "senales": [
+            "'Me encanta cuando pasa esto' dicho ante una situación objetivamente frustrante es una exageración que invierte el sentido.",
+            "Es el tercer cambio en la misma semana: el contexto acumulado hace imposible sostener la lectura literal."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": false,
+        "que_pide": null,
+        "requiere_respuesta": false,
+        "urgencia": "ninguna"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Sí, ya es el tercero esta semana. Cansa.",
+          "cuando_usarla": "Si tenés confianza con el compañero y querés validar el fastidio sin vueltas."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Jaja, claro. ¿Sabés qué cambió esta vez?",
+          "cuando_usarla": "Si preferís no meterte en el quejo y redirigir hacia lo práctico."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "¿Estás ironizando o realmente no te molesta?",
+          "cuando_usarla": "Si por alguna razón no estás seguro de que sea ironía y querés confirmarlo antes de responder en el mismo tono."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "\"Me encanta cuando pasa esto\"",
+          "significado": "Expresar entusiasmo ante algo frustrante es una señal clásica de ironía: dice lo contrario de lo que siente."
+        },
+        {
+          "senal": "Tercer cambio de requisitos en la misma semana",
+          "significado": "El contexto acumulado refuerza la ironía: a más repetición del problema, menos probable que el entusiasmo sea genuino."
+        }
+      ],
+      "categoria": "ironia",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 5,
+    "mensaje": "Sos un genio 🙄",
+    "categoria_esperada": "ironia",
+    "categoria_obtenida": "ironia",
+    "ambiguedad_esperada": "baja",
+    "ambiguedad_obtenida": "baja",
+    "intencion_esperada": "Ironía afectuosa, no hostil. Es complicidad. No corresponde disculparse.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "baja",
+        "explicacion": "El emoji 🙄 (ojos en blanco) contradice directamente el elogio 'sos un genio', lo que es una señal textual clara de ironía."
+      },
+      "lectura_literal": "Tu amigo dice que sos un genio.",
+      "interpretaciones": [
+        {
+          "significado": "Tu chiste fue malo y él te lo está haciendo saber de forma burlona y afectuosa. 'Sos un genio' significa lo contrario: el chiste no tuvo gracia.",
+          "confianza": "alta",
+          "senales": [
+            "'Sos un genio' es un elogio exagerado para responder a un chiste malo.",
+            "El emoji 🙄 (ojos en blanco) contradice el elogio y es la señal más fuerte de ironía."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": false,
+        "que_pide": null,
+        "requiere_respuesta": false,
+        "urgencia": "ninguna"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Jaja sí, lo sé.",
+          "cuando_usarla": "Si querés seguirle la corriente sin vueltas."
+        },
+        {
+          "registro": "cauta",
+          "texto": "¿Tan malo estuvo? 😅",
+          "cuando_usarla": "Si querés reconocer el chiste malo con un poco de humor propio."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "Espera, ¿eso fue un insulto disfrazado de cumplido?",
+          "cuando_usarla": "Si querés hacer explícita la broma y alargar el intercambio."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "\"Sos un genio\"",
+          "significado": "Elogio exagerado usado para decir lo contrario: el chiste no fue gracioso."
+        },
+        {
+          "senal": "🙄",
+          "significado": "Emoji de ojos en blanco. Señal visual de 'no me convenció para nada'. Contradice el elogio y confirma la ironía."
+        }
+      ],
+      "categoria": "ironia",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 0.5
+  },
+  {
+    "id": 6,
+    "mensaje": "Espectacular la reunión de hoy, eh.",
+    "categoria_esperada": "ironia",
+    "categoria_obtenida": "ironia",
+    "ambiguedad_esperada": "baja",
+    "ambiguedad_obtenida": "baja",
+    "intencion_esperada": "Busca complicidad y que le confirmes que también te pareció inútil.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "baja",
+        "explicacion": "El contexto (reunión de dos horas sin ninguna decisión) hace que el elogio sea imposible de sostener en serio. La exageración y el 'eh' final confirman la ironía."
+      },
+      "lectura_literal": "El compañero dice que la reunión fue espectacular.",
+      "interpretaciones": [
+        {
+          "significado": "La reunión fue una pérdida de tiempo y está quejándose de eso, con humor.",
+          "confianza": "alta",
+          "senales": [
+            "'Espectacular' es una exageración que choca con el contexto: dos horas sin ninguna decisión.",
+            "El 'eh' al final es una muletilla que en este registro invita a que el otro valide la queja, no el elogio.",
+            "Si la reunión hubiera sido buena de verdad, 'espectacular' sería un elogio normal; acá funciona al revés."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": true,
+        "que_pide": "Que le des la razón o te sumes a la queja. Es una invitación a desahogarse juntos.",
+        "requiere_respuesta": false,
+        "urgencia": "ninguna"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Jaja sí, dos horas para nada.",
+          "cuando_usarla": "Si tenés confianza con él y también te pareció una pérdida de tiempo."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Jaja... bastante larga, sí.",
+          "cuando_usarla": "Si no querés comprometerte con una queja fuerte pero sí validar el chiste."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "¿Lo decís en serio o fue un bajón?",
+          "cuando_usarla": "Si por alguna razón no estás seguro de que sea ironía y preferís confirmar antes de reírte."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "\"Espectacular\"",
+          "significado": "Elogio exagerado que no tiene sustento en el contexto. Cuando la realidad contradice el adjetivo, la exageración marca ironía."
+        },
+        {
+          "senal": "\"eh\" al final",
+          "significado": "Muletilla que busca complicidad. No pide información, invita al otro a sumarse a la misma lectura."
+        },
+        {
+          "senal": "Dos horas sin ninguna decisión (contexto previo)",
+          "significado": "Sin este dato el mensaje podría ser literal. Con este dato, el elogio se vuelve imposible de sostener en serio."
+        }
+      ],
+      "categoria": "ironia",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 7,
+    "mensaje": "Uy, qué lío esto de la planilla...",
+    "categoria_esperada": "pedido_indirecto",
+    "categoria_obtenida": "pedido_indirecto",
+    "ambiguedad_esperada": "media",
+    "ambiguedad_obtenida": "media",
+    "intencion_esperada": "Probablemente pide ayuda sin pedirla. Ofrecer ayuda es la lectura correcta.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "media",
+        "explicacion": "El comentario puede ser solo una queja en voz alta o un pedido indirecto de ayuda. El contexto inclina la balanza hacia lo segundo, pero no hay una solicitud explícita."
+      },
+      "lectura_literal": "La persona expresa que la planilla le parece complicada o problemática.",
+      "interpretaciones": [
+        {
+          "significado": "Está pidiendo indirectamente que la ayudes con la planilla, sabiendo que vos sabés usarla.",
+          "confianza": "media",
+          "senales": [
+            "\"qué lío esto de la planilla\" dicho en voz alta, en tu presencia, después de estar trabada un rato.",
+            "El contexto: lleva tiempo con el problema y vos tenés la habilidad que necesita."
+          ]
+        },
+        {
+          "significado": "Solo está desahogándose en voz alta, sin esperar nada de tu parte.",
+          "confianza": "baja",
+          "senales": [
+            "No te preguntó nada directamente ni usó tu nombre.",
+            "No hay una solicitud explícita en el mensaje."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": true,
+        "que_pide": "Que te ofrezcas a ayudarla con la planilla.",
+        "requiere_respuesta": true,
+        "urgencia": "baja"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "¿Querés que te doy una mano?",
+          "cuando_usarla": "Si tenés buena onda con el compañero y no te molesta ayudar."
+        },
+        {
+          "registro": "cauta",
+          "texto": "¿Qué parte te está complicando?",
+          "cuando_usarla": "Si querés entender primero qué necesita antes de comprometerte a ayudar."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "¿Necesitás ayuda o solo te estás desahogando?",
+          "cuando_usarla": "Si preferís no asumir nada y que sea él/ella quien pida explícitamente."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "\"qué lío esto de la planilla\" dicho en tu presencia después de estar trabado/a un rato",
+          "significado": "Queja en voz alta dirigida a alguien que puede resolver el problema: patrón típico de pedido indirecto."
+        }
+      ],
+      "categoria": "pedido_indirecto",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 8,
+    "mensaje": "¿Vos por casualidad no vas para el centro mañana?",
+    "categoria_esperada": "pedido_indirecto",
+    "categoria_obtenida": "pedido_indirecto",
+    "ambiguedad_esperada": "baja",
+    "ambiguedad_obtenida": "baja",
+    "intencion_esperada": "Está pidiendo que lo lleves. No es una pregunta informativa.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "baja",
+        "explicacion": "El contexto hace muy claro que es un pedido indirecto de favor o información logística."
+      },
+      "lectura_literal": "Pregunta si vas a ir al centro mañana, formulada como si fuera una consulta casual.",
+      "interpretaciones": [
+        {
+          "significado": "Quiere pedirte algo relacionado con su trámite en el centro: que lo lleves, que hagas algo por él, o que le confirmes si podés ayudarlo de alguna forma.",
+          "confianza": "alta",
+          "senales": [
+            "\"¿por casualidad no vas...?\" — forma clásica de introducir un pedido sin hacerlo explícito todavía.",
+            "Contexto: sabe que trabajás en el centro y él tiene un trámite ahí. La pregunta no es curiosidad, tiene un propósito."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": true,
+        "que_pide": "Todavía no lo dijo, pero está abriendo la puerta para pedirte algo: probablemente que lo lleves, que hagas un trámite por él, o que coordinen ir juntos.",
+        "requiere_respuesta": true,
+        "urgencia": "baja"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Sí, voy. ¿Necesitás algo?",
+          "cuando_usarla": "Si querés ahorrar vueltas y que llegue al punto rápido."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Sí, voy. ¿Por?",
+          "cuando_usarla": "Si querés confirmar que vas antes de comprometerte a algo que no conocés todavía."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "Sí, voy para allá. ¿Tiene que ver con el trámite que tenés?",
+          "cuando_usarla": "Si querés mostrar que ya entendiste de qué se trata y evitar que dé muchas vueltas para llegar al pedido."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "\"¿por casualidad no vas...?\"",
+          "significado": "La frase 'por casualidad' suaviza la pregunta para que no suene a pedido directo. Es una forma muy común de tantear si la otra persona puede ayudar antes de pedir el favor."
+        },
+        {
+          "senal": "Contexto: él tiene un trámite en el centro y sabe que vos trabajás ahí.",
+          "significado": "Sin ese contexto, la pregunta podría ser pura curiosidad. Con ese contexto, la pregunta tiene un propósito claro aunque no lo diga."
+        }
+      ],
+      "categoria": "pedido_indirecto",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 9,
+    "mensaje": "Che, ¿viste que el informe todavía no está subido?",
+    "categoria_esperada": "pedido_indirecto",
+    "categoria_obtenida": "pedido_indirecto",
+    "ambiguedad_esperada": "baja",
+    "ambiguedad_obtenida": "baja",
+    "intencion_esperada": "Es un pedido con presión, no una pregunta. Corresponde dar fecha concreta, no responder 'sí, vi'.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "baja",
+        "explicacion": "La pregunta tiene una respuesta obvia para ambos: sí, el informe no está subido. No pide información real; pide acción."
+      },
+      "lectura_literal": "Tu jefe pregunta si notaste que el informe todavía no fue subido al sistema.",
+      "interpretaciones": [
+        {
+          "significado": "Tu jefe te está señalando que el informe está atrasado y espera que lo subas cuanto antes. La pregunta es la forma de decirte 'subilo' sin ordenártelo directamente.",
+          "confianza": "alta",
+          "senales": [
+            "\"¿viste que...\" es una pregunta que no pide información: ambos saben que el informe no está subido.",
+            "El informe era tuyo y venció ayer, así que el destinatario natural del mensaje sos vos.",
+            "El canal es Slack laboral, contexto donde este tipo de pregunta funciona como señal de seguimiento."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": true,
+        "que_pide": "Que subas el informe lo antes posible.",
+        "requiere_respuesta": true,
+        "urgencia": "alta"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Sí, me demoré. Lo subo ahora mismo.",
+          "cuando_usarla": "Si ya tenés el informe listo o casi listo y podés cumplir en minutos."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Sí, lo vi. Estoy terminando los últimos detalles, lo tenés antes de las [hora concreta].",
+          "cuando_usarla": "Si necesitás un poco más de tiempo pero podés dar una hora real y cumplirla."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "Sí, lo vi. Tuve un problema con [motivo concreto]. ¿Puedo entregarlo hoy a las [hora]?",
+          "cuando_usarla": "Si hay una razón real que explica el atraso y querés que tu jefe la sepa antes de que asuma otra cosa."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "\"¿viste que el informe todavía no está subido?\"",
+          "significado": "Pregunta retórica: no pide confirmación, pide acción. Es la forma indirecta de decir 'subí el informe'."
+        },
+        {
+          "senal": "\"todavía\"",
+          "significado": "Marca que ya pasó el momento esperado. Refuerza que hay un atraso, no una simple consulta."
+        }
+      ],
+      "categoria": "pedido_indirecto",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 10,
+    "mensaje": "Yo tengo el auto en el taller toda la semana.",
+    "categoria_esperada": "pedido_indirecto",
+    "categoria_obtenida": "pedido_indirecto",
+    "ambiguedad_esperada": "media",
+    "ambiguedad_obtenida": "media",
+    "intencion_esperada": "Probablemente pide que lo pases a buscar, sin decirlo.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "media",
+        "explicacion": "El mensaje no dice explícitamente 'no puedo llevarte' ni 'llevame vos', pero el contexto del cumpleaños hace muy probable que sea un pedido indirecto o una advertencia de que no va a poder manejar."
+      },
+      "lectura_literal": "El amigo informa que su auto está en el taller durante toda la semana.",
+      "interpretaciones": [
+        {
+          "significado": "Está avisando que no va a poder ir en su auto al cumpleaños, y probablemente espera que vos lo lleves o que coordinen otro transporte.",
+          "confianza": "media",
+          "senales": [
+            "El mensaje llega justo después de hablar del cumpleaños del sábado.",
+            "'Toda la semana' incluye el sábado, que es el día relevante para los dos."
+          ]
+        },
+        {
+          "significado": "Solo está contando algo de su vida sin pedirte nada concreto, y el transporte lo va a resolver por su cuenta.",
+          "confianza": "baja",
+          "senales": [
+            "El mensaje no dice 'podés llevarme' ni hace ninguna pregunta.",
+            "No hay pedido explícito de ningún tipo."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": true,
+        "que_pide": "Probablemente que lo lleves al cumpleaños, o al menos que coordinen cómo van a ir los dos.",
+        "requiere_respuesta": true,
+        "urgencia": "baja"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Ah, ¿querés que te pase a buscar el sábado?",
+          "cuando_usarla": "Si te parece claro que te está pidiendo que lo lleves y vos podés hacerlo."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Uh, qué bajón. ¿Y cómo vas a hacer para el sábado?",
+          "cuando_usarla": "Si no estás seguro de qué necesita y preferís que él diga qué tiene en mente."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "¿Me estás diciendo que no vas a poder manejar el sábado? ¿Cómo quedamos?",
+          "cuando_usarla": "Si querés dejar todo claro de una vez y cerrar el tema del cumpleaños."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "\"Yo tengo el auto en el taller toda la semana\"",
+          "significado": "Mencionar el auto justo después de hablar de ir juntos a un evento no es casualidad: es una forma indirecta de decir que hay un problema de transporte sin pedirte nada de frente."
+        },
+        {
+          "senal": "\"toda la semana\"",
+          "significado": "Especificar la duración completa incluye el sábado del cumpleaños, que es el dato relevante para los dos."
+        }
+      ],
+      "categoria": "pedido_indirecto",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 11,
+    "mensaje": "Está frío acá, ¿no?",
+    "categoria_esperada": "pedido_indirecto",
+    "categoria_obtenida": "pedido_indirecto",
+    "ambiguedad_esperada": "baja",
+    "ambiguedad_obtenida": "baja",
+    "intencion_esperada": "Pide que cierres la ventana. La pregunta es una forma cortés de pedir.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "baja",
+        "explicacion": "El contexto (ventana abierta, frío real) hace que la lectura más directa sea la más sostenible. Hay una señal concreta que apunta a un pedido indirecto."
+      },
+      "lectura_literal": "La persona observa que la temperatura en el lugar es baja y lo formula como pregunta.",
+      "interpretaciones": [
+        {
+          "significado": "Está pidiendo indirectamente que cierres la ventana, o que alguien lo haga.",
+          "confianza": "alta",
+          "senales": [
+            "La pregunta no pide información: ambos están en el mismo lugar y los dos pueden sentir la temperatura.",
+            "La ventana está abierta, que es la causa obvia del frío.",
+            "Formularlo como pregunta ('¿no?') busca confirmación, no datos."
+          ]
+        },
+        {
+          "significado": "Solo está comentando la temperatura, sin esperar ninguna acción.",
+          "confianza": "baja",
+          "senales": [
+            "Es posible que sea un comentario casual para iniciar conversación o llenar silencio."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": true,
+        "que_pide": "Que cierres la ventana, o que alguien lo haga.",
+        "requiere_respuesta": true,
+        "urgencia": "baja"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Sí, cierro la ventana.",
+          "cuando_usarla": "Si querés resolver la situación sin rodeos y no te molesta cerrarla."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Sí, está bastante frío. ¿Cerramos la ventana?",
+          "cuando_usarla": "Si preferís confirmar que eso es lo que quiere antes de actuar."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "¿Querés que cierre la ventana?",
+          "cuando_usarla": "Si no estás seguro de si es un pedido o un comentario, y preferís preguntar directamente."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "¿no?",
+          "significado": "Pregunta que busca acuerdo, no información. Ambos están en el mismo lugar y pueden sentir el frío. Esto es una señal de que no es una pregunta real sino una forma de introducir un pedido."
+        },
+        {
+          "senal": "ventana abierta como contexto previo",
+          "significado": "La causa del frío es visible y obvia. Mencionarlo apunta a que se espera que alguien haga algo al respecto."
+        }
+      ],
+      "categoria": "pedido_indirecto",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 12,
+    "mensaje": "¿Cómo venís con eso que hablamos?",
+    "categoria_esperada": "pedido_indirecto",
+    "categoria_obtenida": "pedido_indirecto",
+    "ambiguedad_esperada": "baja",
+    "ambiguedad_obtenida": "baja",
+    "intencion_esperada": "Recordatorio con presión suave. Espera una fecha, no un 'ahí voy'.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "baja",
+        "explicacion": "El contexto hace el mensaje bastante claro: hay una tarea pendiente y el jefe pregunta por ella."
+      },
+      "lectura_literal": "El jefe pregunta en qué estado está algo que conversaron previamente.",
+      "interpretaciones": [
+        {
+          "significado": "Está preguntando por la propuesta que te pidió hace diez días. Quiere saber si está lista o cuándo va a estarlo.",
+          "confianza": "alta",
+          "senales": [
+            "'eso que hablamos' remite directamente a la propuesta pendiente",
+            "diez días sin respuesta hacen esperable este seguimiento"
+          ]
+        },
+        {
+          "significado": "Además de pedir información, está marcando indirectamente que pasó tiempo sin novedades.",
+          "confianza": "media",
+          "senales": [
+            "preguntar 'cómo venís' en lugar de 'ya terminaste' deja espacio, pero el contexto de diez días sin respuesta le da peso a la demora"
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": true,
+        "que_pide": "Una actualización concreta sobre el estado de la propuesta: si está lista, cuándo va a estar, o por qué no llegó todavía.",
+        "requiere_respuesta": true,
+        "urgencia": "media"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Hola, todavía no la terminé. La tengo lista para el [día concreto].",
+          "cuando_usarla": "Si ya sabés cuándo la vas a entregar y querés ser claro sin dar muchas explicaciones."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Hola, estoy terminando de cerrarla. ¿Te parece bien si te la mando el [día concreto]?",
+          "cuando_usarla": "Si querés proponer una fecha y dejar que él la apruebe, sin sonar a que te olvidaste."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "Hola, me demoré más de lo que esperaba porque [motivo breve]. ¿Puedo mandártela el [día concreto]?",
+          "cuando_usarla": "Si hay una razón real para la demora y creés que vale la pena mencionarla. No inventes una."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "'¿Cómo venís con eso que hablamos?'",
+          "significado": "Pregunta que no pide información nueva: ya sabe de qué habla. Es un seguimiento de algo que debería haber llegado y no llegó."
+        },
+        {
+          "senal": "Diez días sin respuesta de tu parte",
+          "significado": "El contexto convierte una pregunta neutral en un recordatorio. No es agresivo, pero tampoco es casual."
+        }
+      ],
+      "categoria": "pedido_indirecto",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 13,
+    "mensaje": "Interesante el enfoque. Distinto.",
+    "categoria_esperada": "critica_suave",
+    "categoria_obtenida": "ambiguedad_genuina",
+    "ambiguedad_esperada": "media",
+    "ambiguedad_obtenida": "alta",
+    "intencion_esperada": "'Distinto' sin elogio concreto sugiere desacuerdo educado. Conviene pedir feedback específico.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "alta",
+        "explicacion": "Las palabras son neutras pero el contexto (evaluación de un jefe sobre una propuesta) hace que 'distinto' pueda ser elogio o crítica. No hay señal textual que desempate con certeza."
+      },
+      "lectura_literal": "El jefe dice que el enfoque le parece interesante y diferente a lo que esperaba o conocía.",
+      "interpretaciones": [
+        {
+          "significado": "Le gustó la propuesta. 'Interesante' y 'distinto' son elogios genuinos: valora que hayas traído algo fuera de lo convencional.",
+          "confianza": "media",
+          "senales": [
+            "'Interesante' en contexto profesional suele ser valoración positiva.",
+            "'Distinto' puede indicar que se destacó del resto."
+          ]
+        },
+        {
+          "significado": "No le convenció del todo. 'Distinto' puede ser una forma suave de decir que se alejó de lo que esperaba, y 'interesante' una fórmula para no decir 'no me gusta'.",
+          "confianza": "media",
+          "senales": [
+            "La respuesta es muy corta para una propuesta de diseño completa.",
+            "No hay ningún comentario concreto, ni elogio específico, ni próximo paso.",
+            "'Distinto' sin calificación positiva explícita queda ambiguo."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": false,
+        "que_pide": null,
+        "requiere_respuesta": true,
+        "urgencia": "baja"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Gracias. ¿Hay algo que quieras que ajuste o desarrolle más?",
+          "cuando_usarla": "Si tenés confianza con tu jefe y preferís ir al punto rápido."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Gracias por el feedback. Quedo disponible si querés conversar sobre algún aspecto de la propuesta.",
+          "cuando_usarla": "Si no tenés mucha confianza con él o preferís no presionar y esperar que él tome la iniciativa."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "Gracias. Me gustaría saber si el enfoque va en la dirección que buscaban, o si preferirías que lo reoriente.",
+          "cuando_usarla": "Si necesitás saber concretamente si la propuesta sigue adelante o hay que cambiarla. Esta pregunta te da información real sin sonar ansiosa."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "'Interesante el enfoque. Distinto.'",
+          "significado": "Dos adjetivos sueltos, sin ningún detalle concreto. Para una propuesta de diseño completa, es una respuesta muy escueta. Eso no confirma que sea negativo, pero sí que no hay entusiasmo explícito."
+        },
+        {
+          "senal": "'Distinto'",
+          "significado": "Sin un calificativo que lo acompañe ('muy distinto, me gustó' o 'distinto a lo que pedimos'), queda flotando. Puede ser bueno o malo según el contexto de la propuesta."
+        },
+        {
+          "senal": "Ausencia de próximo paso",
+          "significado": "Un jefe que aprueba una propuesta suele decir algo como 'seguimos con esto' o 'hablamos'. Que no haya nada de eso deja abierta la pregunta de qué sigue."
+        }
+      ],
+      "categoria": "ambiguedad_genuina",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 0.5
+  },
+  {
+    "id": 14,
+    "mensaje": "Está bien, igual yo lo hubiera hecho de otra forma, pero está bien.",
+    "categoria_esperada": "critica_suave",
+    "categoria_obtenida": "critica_suave",
+    "ambiguedad_esperada": "baja",
+    "ambiguedad_obtenida": "baja",
+    "intencion_esperada": "No está conforme. El 'está bien' repetido señala reserva, no aprobación.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "baja",
+        "explicacion": "La estructura del mensaje tiene una señal textual clara de crítica atenuada: la concesión 'está bien' enmarcada por una corrección explícita."
+      },
+      "lectura_literal": "La persona dice que el resultado es aceptable, pero aclara que ella lo habría hecho de manera diferente.",
+      "interpretaciones": [
+        {
+          "significado": "No está del todo conforme con cómo hiciste la tarea. Lo dice de forma suavizada para no generar conflicto, pero la crítica está ahí.",
+          "confianza": "alta",
+          "senales": [
+            "\"igual yo lo hubiera hecho de otra forma\": introduce una corrección implícita en medio de una aprobación.",
+            "El 'está bien' se repite dos veces, como si necesitara convencerse o convencerte de que acepta el resultado.",
+            "El 'pero' conecta la aprobación con la corrección, lo que le quita peso a la aprobación."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": false,
+        "que_pide": "No hay un pedido concreto. No te está pidiendo que cambies nada ni que hagas algo distinto ahora.",
+        "requiere_respuesta": false,
+        "urgencia": "ninguna"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Entendido. Si tenés alguna sugerencia para la próxima, avisame.",
+          "cuando_usarla": "Si querés cerrar el tema sin darle más peso del que tiene, pero dejando la puerta abierta a feedback concreto."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Bueno, gracias. Si ves algo que mejorar para la próxima, me decís.",
+          "cuando_usarla": "Si preferís no confrontar el comentario y simplemente seguir adelante."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "¿Qué hubieras hecho diferente? Me sirve saberlo para la próxima.",
+          "cuando_usarla": "Si querés entender exactamente qué le molestó o qué haría distinto, para no quedarte con la duda. Es la opción más útil si van a seguir trabajando juntos."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "\"igual yo lo hubiera hecho de otra forma\"",
+          "significado": "Introduce una corrección implícita. No dice qué haría diferente ni por qué, pero deja claro que no haría lo mismo que vos."
+        },
+        {
+          "senal": "\"está bien\" repetido dos veces",
+          "significado": "Cuando una aprobación necesita reforzarse, suele ser porque no es completa. Una aprobación genuina no necesita repetirse."
+        },
+        {
+          "senal": "\"pero\" entre las dos partes del mensaje",
+          "significado": "El 'pero' funciona como bisagra: lo que viene después del 'pero' es lo que la persona realmente quiere decir. Acá, lo que viene después es la crítica."
+        }
+      ],
+      "categoria": "critica_suave",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 15,
+    "mensaje": "Nadie te está criticando, eh.",
+    "categoria_esperada": "critica_suave",
+    "categoria_obtenida": "critica_suave",
+    "ambiguedad_esperada": "media",
+    "ambiguedad_obtenida": "baja",
+    "intencion_esperada": "La negación innecesaria señala que sí hay tensión. Nombrar algo que nadie mencionó lo confirma.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "baja",
+        "explicacion": "La negación innecesaria en un contexto donde nadie acusó a nadie es una señal textual clara de que sí hay crítica implícita."
+      },
+      "lectura_literal": "El compañero dice que ninguna persona del grupo está criticando al usuario.",
+      "interpretaciones": [
+        {
+          "significado": "Hay una crítica implícita al usuario por el atraso, pero se la envuelve en una negación para que suene más suave o para que el usuario no se ponga a la defensiva.",
+          "confianza": "alta",
+          "senales": [
+            "\"Nadie te está criticando\" — si nadie estaba criticando, no habría necesidad de aclararlo.",
+            "El contexto es una conversación sobre un atraso: hay un problema concreto que alguien tiene que explicar.",
+            "El \"eh\" al final suaviza el tono pero no cambia el contenido."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": true,
+        "que_pide": "Que el usuario explique o reconozca su parte en el atraso sin ponerse defensivo.",
+        "requiere_respuesta": true,
+        "urgencia": "media"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Entiendo. Igual quiero explicar qué pasó de mi lado para que quede claro.",
+          "cuando_usarla": "Si querés tomar el control de la conversación y dar tu versión sin esperar más rodeos."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Bueno, contame qué parte les preocupa y lo vemos.",
+          "cuando_usarla": "Si preferís escuchar primero qué es exactamente lo que les molestó antes de responder."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "¿Hay algo puntual que quieran que explique sobre el atraso?",
+          "cuando_usarla": "Si querés que la otra persona diga explícitamente lo que está insinuando, en lugar de seguir con el rodeo."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "\"Nadie te está criticando\"",
+          "significado": "Negación innecesaria: si nadie estuviera criticando, no haría falta decirlo. Aparece justo cuando hay un problema que alguien tiene que explicar."
+        },
+        {
+          "senal": "\"eh\" al final",
+          "significado": "Partícula que suaviza el tono, pero no cambia el contenido. Es una señal de que el mensaje busca bajar la tensión mientras igual lo dice."
+        }
+      ],
+      "categoria": "critica_suave",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 16,
+    "mensaje": "Me sorprendió que lo mandaras sin avisarme.",
+    "categoria_esperada": "critica_suave",
+    "categoria_obtenida": "critica_suave",
+    "ambiguedad_esperada": "baja",
+    "ambiguedad_obtenida": "baja",
+    "intencion_esperada": "Es un reproche por saltear un paso acordado. 'Me sorprendió' reemplaza a 'me molestó'.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "baja",
+        "explicacion": "El mensaje dice directamente que la acción tomó por sorpresa al compañero. La palabra 'sorprendió' en contexto laboral formal casi siempre señala incomodidad o reproche, no admiración."
+      },
+      "lectura_literal": "El compañero dice que no esperaba que mandaras el presupuesto al cliente sin avisarle antes.",
+      "interpretaciones": [
+        {
+          "significado": "Le molestó que no lo consultaras o informaras antes de mandar el presupuesto. Lo está marcando como un error de procedimiento o de coordinación.",
+          "confianza": "alta",
+          "senales": [
+            "\"sin avisarme\" — pone el foco en la falta de aviso, no en el contenido del presupuesto.",
+            "\"me sorprendió\" — en un mail de trabajo, 'sorpresa' por una acción del colega casi nunca es elogio; es una forma atenuada de decir 'no debería haber pasado así'.",
+            "El canal es mail, que en contexto laboral suele usarse para dejar registro de algo."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": true,
+        "que_pide": "Que en el futuro lo avises o consultes antes de mandar cosas al cliente. Implícitamente también puede estar esperando una explicación o disculpa por esta vez.",
+        "requiere_respuesta": true,
+        "urgencia": "media"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Tenés razón, debería haberte avisado antes de mandarlo. La próxima te consulto primero.",
+          "cuando_usarla": "Si reconocés que fue un error de coordinación y querés cerrarlo rápido y sin vueltas."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Entiendo que te tomó por sorpresa. Lo mandé porque [razón concreta], pero si hay un proceso distinto para este tipo de cosas, me avisás y lo sigo.",
+          "cuando_usarla": "Si tenías una razón válida para mandarlo así y querés explicarla sin ponerte a la defensiva, dejando la puerta abierta a aclarar el procedimiento."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "Entendido. ¿Hay un paso previo que debería seguir antes de mandar presupuestos al cliente?",
+          "cuando_usarla": "Si genuinamente no sabías que había que avisarle y querés entender cómo manejarlo de acá en adelante, sin asumir culpa ni negarla."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "\"me sorprendió\"",
+          "significado": "En un mail de trabajo, expresar sorpresa por una acción del colega es una forma socialmente aceptable de marcar que algo no estuvo bien, sin decirlo de forma confrontativa."
+        },
+        {
+          "senal": "\"sin avisarme\"",
+          "significado": "Pone el énfasis en el proceso omitido, no en el resultado. Eso indica que el problema para él es la coordinación, no necesariamente el presupuesto en sí."
+        },
+        {
+          "senal": "Canal: mail",
+          "significado": "Elegir el mail para esto, en lugar de un mensaje informal, sugiere que quiere dejar registro. Le da más peso al reclamo."
+        }
+      ],
+      "categoria": "critica_suave",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 17,
+    "mensaje": "Se entiende, pero hay que leerlo dos veces.",
+    "categoria_esperada": "critica_suave",
+    "categoria_obtenida": "critica_suave",
+    "ambiguedad_esperada": "baja",
+    "ambiguedad_obtenida": "baja",
+    "intencion_esperada": "Está diciendo que está confuso y conviene reescribirlo.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "baja",
+        "explicacion": "El mensaje tiene una estructura clara: primero valida, después señala un problema. La secuencia 'pero' es una señal textual directa de crítica atenuada."
+      },
+      "lectura_literal": "El texto se comprende, pero requiere más de una lectura para entenderse bien.",
+      "interpretaciones": [
+        {
+          "significado": "El texto tiene un problema de claridad. Se entiende, pero cuesta más de lo que debería. El 'pero' anula parcialmente el 'se entiende': lo que importa es la segunda parte.",
+          "confianza": "alta",
+          "senales": [
+            "'pero hay que leerlo dos veces': el 'pero' introduce la crítica real y descarta el elogio previo como atenuante.",
+            "'dos veces': señal concreta de que la lectura no fue fluida."
+          ]
+        },
+        {
+          "significado": "Es una observación neutral: el texto es denso por su tema, no por un error de escritura. No hay intención crítica, solo descripción.",
+          "confianza": "baja",
+          "senales": [
+            "'Se entiende' aparece primero y sin calificación negativa, lo que podría leerse como validación genuina."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": true,
+        "que_pide": "Que revises el texto para hacerlo más claro y fácil de leer en una sola pasada.",
+        "requiere_respuesta": true,
+        "urgencia": "baja"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Gracias. ¿Qué parte te pareció que costaba más seguir?",
+          "cuando_usarla": "Si querés saber exactamente dónde está el problema para poder corregirlo."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Entendido, le doy otra vuelta para simplificarlo.",
+          "cuando_usarla": "Si preferís no preguntar más y simplemente mejorar el texto por tu cuenta."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "¿La dificultad es el tema en sí o cómo está escrito? Así sé si reescribir o si es esperable dado el contenido.",
+          "cuando_usarla": "Si no estás seguro de si el problema es tuyo o del tema, y necesitás esa distinción antes de editar."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "'Se entiende, pero'",
+          "significado": "El 'pero' funciona como bisagra: lo que viene después es lo que realmente quiso decir. Lo de antes es un amortiguador para suavizar la crítica."
+        },
+        {
+          "senal": "'hay que leerlo dos veces'",
+          "significado": "Señal concreta de que la claridad del texto es mejorable. No es un elogio: leer algo dos veces es un costo, no un halago."
+        }
+      ],
+      "categoria": "critica_suave",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 18,
+    "mensaje": "Dale, cualquier cosa te aviso.",
+    "categoria_esperada": "desinteres",
+    "categoria_obtenida": "cortesia_formula",
+    "ambiguedad_esperada": "media",
+    "ambiguedad_obtenida": "baja",
+    "intencion_esperada": "Cierre cortés. Probablemente no va a avisar. No corresponde insistir.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "baja",
+        "explicacion": "Es una fórmula de cierre muy reconocible en el español rioplatense. El contexto (oferta de ayuda sin respuesta concreta) la ubica claramente como cortesía de despedida."
+      },
+      "lectura_literal": "La persona dice que si necesita algo, va a avisarte.",
+      "interpretaciones": [
+        {
+          "significado": "Está cerrando la conversación de forma amable sin comprometerse a nada. No rechaza la ayuda explícitamente, pero tampoco la acepta. Es una salida cortés que deja todo en suspenso indefinido.",
+          "confianza": "alta",
+          "senales": [
+            "\"cualquier cosa te aviso\" es una fórmula de cierre muy común en el Río de la Plata",
+            "No hay fecha, no hay tarea concreta, no hay pregunta de seguimiento",
+            "La respuesta es muy corta para alguien que está genuinamente interesado en coordinar ayuda"
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": false,
+        "que_pide": null,
+        "requiere_respuesta": false,
+        "urgencia": "ninguna"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Bueno, acá estoy.",
+          "cuando_usarla": "Si querés cerrar el intercambio sin presionar. Simple y deja la puerta abierta."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Perfecto, cuando quieras.",
+          "cuando_usarla": "Si preferís no decir nada que pueda sentirse como insistencia. Espeja su tono y cierra limpio."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "Claro. Si te sirve, puedo ayudarte con [parte concreta del proyecto]. Avisame cuando tengas ganas de arrancar.",
+          "cuando_usarla": "Si creés que quizás no sabe bien en qué podés ayudar y eso frenó una respuesta más concreta. Hacés explícita tu oferta sin presionar."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "\"cualquier cosa te aviso\"",
+          "significado": "Fórmula de cierre rioplatense. Suena amable pero no implica ningún compromiso real ni fecha ni acción concreta."
+        },
+        {
+          "senal": "Respuesta muy corta ante una oferta de ayuda",
+          "significado": "Alguien que quiere coordinar ayuda suele preguntar algo, proponer un momento o dar algún detalle. La brevedad acá indica que no está tomando la oferta en serio por ahora."
+        }
+      ],
+      "categoria": "cortesia_formula",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 19,
+    "mensaje": "Uh, se me complica esa semana, después vemos.",
+    "categoria_esperada": "desinteres",
+    "categoria_obtenida": "desinteres",
+    "ambiguedad_esperada": "media",
+    "ambiguedad_obtenida": "media",
+    "intencion_esperada": "Es un no sin fecha alternativa. Si le interesara, propondría otro día.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "media",
+        "explicacion": "La frase esquiva la propuesta sin cerrarla, pero 'después vemos' puede ser un rechazo suave o una postergación genuina. No hay señal textual que desempate con certeza."
+      },
+      "lectura_literal": "Esa semana tiene un problema de agenda. Queda pendiente definir otra fecha.",
+      "interpretaciones": [
+        {
+          "significado": "No tiene ganas de juntarse, o al menos no es una prioridad, y usa la semana ocupada como salida sin comprometerse a nada.",
+          "confianza": "media",
+          "senales": [
+            "'después vemos' no propone fecha alternativa ni pregunta cuándo podés vos.",
+            "'se me complica' es vago: no dice qué lo complica ni si es toda la semana o un día puntual."
+          ]
+        },
+        {
+          "significado": "Genuinamente esa semana no puede, y 'después vemos' es su forma de no cerrar la puerta.",
+          "confianza": "media",
+          "senales": [
+            "'se me complica esa semana' acota el problema a una semana específica, no a juntarse en general.",
+            "'después vemos' deja abierta la posibilidad, aunque sin fecha."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": false,
+        "que_pide": "No hay pedido explícito ni implícito claro.",
+        "requiere_respuesta": true,
+        "urgencia": "baja"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Dale, avisame cuando tenés una semana más libre y coordinamos.",
+          "cuando_usarla": "Si no querés presionar pero tampoco querés ser vos quien siempre propone. Dejás la pelota en su cancha sin drama."
+        },
+        {
+          "registro": "cauta",
+          "texto": "No hay problema. ¿Más o menos para cuándo te imaginás que se libera la agenda?",
+          "cuando_usarla": "Si querés saber si hay intención real de juntarse sin preguntarlo de forma directa. La respuesta que te dé va a decirte bastante."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "Entiendo, ¿hay alguna semana que te venga mejor? Te pregunto para no proponer otra fecha que tampoco te cierre.",
+          "cuando_usarla": "Si preferís resolver esto de una vez y no quedar en un 'después vemos' indefinido."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "'después vemos'",
+          "significado": "Postergación sin fecha ni contrapropuesta. En una propuesta concreta, una respuesta genuinamente interesada suele ofrecer una alternativa o preguntar cuándo más podés."
+        },
+        {
+          "senal": "'se me complica esa semana'",
+          "significado": "Vago: no especifica qué día, qué problema, ni si es toda la semana. Eso puede ser descuido o puede ser una excusa amplia."
+        }
+      ],
+      "categoria": "desinteres",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 20,
+    "mensaje": "jajaja",
+    "categoria_esperada": "desinteres",
+    "categoria_obtenida": "ambiguedad_genuina",
+    "ambiguedad_esperada": "media",
+    "ambiguedad_obtenida": "alta",
+    "intencion_esperada": "Cierre de conversación por asimetría de energía. No es hostilidad ni rechazo personal.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "alta",
+        "explicacion": "Una sola palabra sin contexto verbal puede ser risa genuina, risa incómoda, o una forma de cerrar la conversación sin comprometerse. No hay señal textual que desempate."
+      },
+      "lectura_literal": "La persona se rió, o expresó que algo le causó gracia.",
+      "interpretaciones": [
+        {
+          "significado": "No supo qué responder a algo tan personal y usó 'jajaja' para salir del paso sin comprometerse.",
+          "confianza": "media",
+          "senales": [
+            "Tres mensajes largos merecen una respuesta más elaborada. La brevedad extrema frente a tanto contenido es una señal de que algo no encajó."
+          ]
+        },
+        {
+          "significado": "Encontró algo gracioso o liviano en lo que contaste y respondió con risa genuina.",
+          "confianza": "media",
+          "senales": [
+            "'jajaja' es la forma más común de expresar risa en WhatsApp. Sin más contexto, no se puede descartar que sea literal."
+          ]
+        },
+        {
+          "significado": "Está incómodo con el nivel de intimidad del mensaje y se distancia con una respuesta mínima.",
+          "confianza": "baja",
+          "senales": [
+            "La desproporción entre lo que vos escribiste y lo que respondió puede indicar que no quiso entrar en el tema."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": false,
+        "que_pide": null,
+        "requiere_respuesta": false,
+        "urgencia": "ninguna"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Che, ¿te llegó bien lo que te mandé? No sé si fue gracioso o qué.",
+          "cuando_usarla": "Si tenés confianza suficiente para preguntar sin que suene a reclamo."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Jaja. Bueno, era eso.",
+          "cuando_usarla": "Si preferís no hacer un tema de esto y ver si la conversación sigue sola."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "No sé si te causó gracia o no sabías qué decir, jaja. Me quedo con la duda.",
+          "cuando_usarla": "Si querés abrir la puerta a que explique sin presionarlo directamente."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "\"jajaja\" como respuesta a tres mensajes largos",
+          "significado": "La desproporción entre el volumen de lo que vos escribiste y la brevedad de la respuesta es la única señal concreta. Puede indicar incomodidad, falta de saber qué decir, o simplemente que algo le pareció gracioso. No alcanza para decidir cuál."
+        }
+      ],
+      "categoria": "ambiguedad_genuina",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 0.5
+  },
+  {
+    "id": 21,
+    "mensaje": "Sí, totalmente.",
+    "categoria_esperada": "desinteres",
+    "categoria_obtenida": "ambiguedad_genuina",
+    "ambiguedad_esperada": "alta",
+    "ambiguedad_obtenida": "alta",
+    "intencion_esperada": "Puede ser desconexión, distracción o mal momento suyo. No se puede saber si es sobre vos.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "alta",
+        "explicacion": "Sin saber qué dijiste exactamente ni qué respondió 'sí, totalmente' a eso, hay varias lecturas posibles y ninguna señal textual que desempate."
+      },
+      "lectura_literal": "Acuerdo o confirmación completa con algo que dijiste.",
+      "interpretaciones": [
+        {
+          "significado": "Te está dando la razón o validando lo que contaste, de forma genuina pero breve.",
+          "confianza": "media",
+          "senales": [
+            "'Totalmente' refuerza el acuerdo, no lo atenúa."
+          ]
+        },
+        {
+          "significado": "Respondió algo para no dejar el mensaje en visto, pero no sabe bien qué decir o no está muy presente en la conversación.",
+          "confianza": "media",
+          "senales": [
+            "La respuesta es muy corta para alguien que acaba de escuchar algo importante y preocupante.",
+            "No hay pregunta de seguimiento, ni expresión de preocupación, ni nada que muestre que procesó lo que contaste."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": false,
+        "que_pide": null,
+        "requiere_respuesta": false,
+        "urgencia": "ninguna"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Oye, ¿entendiste lo que te conté? Me quedé con la sensación de que no llegué a explicarme bien.",
+          "cuando_usarla": "Si querés saber si realmente te escuchó y te sentís cómodo siendo directo."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Sí... igual es algo que me tiene bastante en la cabeza.",
+          "cuando_usarla": "Si querés darle una segunda oportunidad de engancharse con el tema sin presionarlo."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "¿Qué pensás de todo eso?",
+          "cuando_usarla": "Si querés entender si realmente procesó lo que dijiste o respondió en piloto automático."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "Respuesta de tres palabras a algo importante y preocupante",
+          "significado": "Una respuesta tan corta a algo que describís como importante es más corta de lo esperable. Puede indicar que no supo qué decir, que no leyó con atención, o simplemente que es una persona de pocas palabras. No se puede saber cuál sin más contexto."
+        },
+        {
+          "senal": "No hay pregunta ni expresión de preocupación",
+          "significado": "Cuando alguien escucha algo que preocupa a un amigo, lo más frecuente es preguntar algo o decir cómo se siente al respecto. La ausencia de eso es la señal más concreta de que algo no encajó, aunque no dice por qué."
+        }
+      ],
+      "categoria": "ambiguedad_genuina",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 0.5
+  },
+  {
+    "id": 22,
+    "mensaje": "Tenemos que juntarnos un día de estos.",
+    "categoria_esperada": "cortesia_formula",
+    "categoria_obtenida": "cortesia_formula",
+    "ambiguedad_esperada": "baja",
+    "ambiguedad_obtenida": "baja",
+    "intencion_esperada": "Fórmula social de cierre amable. No es un plan. Si querés que lo sea, hay que proponer fecha.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "baja",
+        "explicacion": "La fórmula 'un día de estos' sin fecha ni propuesta concreta es una señal textual clara de cortesía social sin compromiso real."
+      },
+      "lectura_literal": "La persona propone que se junten en algún momento no especificado.",
+      "interpretaciones": [
+        {
+          "significado": "Es una fórmula de cierre social. Fue agradable cruzarse, pero no hay una intención real de coordinar un encuentro. 'Un día de estos' sin fecha ni propuesta concreta es la forma estándar de terminar un reencuentro casual de forma amigable.",
+          "confianza": "alta",
+          "senales": [
+            "'un día de estos': expresión sin fecha, sin propuesta, sin pregunta de disponibilidad."
+          ]
+        },
+        {
+          "significado": "Tiene genuina intención de verse, pero no sabe cómo concretarlo o le da vergüenza proponer algo más específico.",
+          "confianza": "baja",
+          "senales": [
+            "El hecho de haberlo escrito por WhatsApp después del cruce podría indicar algo más que cortesía, aunque el texto solo no lo confirma."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": false,
+        "que_pide": "No hay un pedido concreto. Si hubiera intención real, el pedido sería coordinar un encuentro, pero no está formulado.",
+        "requiere_respuesta": true,
+        "urgencia": "baja"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Sí, dale. ¿Cuándo te queda bien?",
+          "cuando_usarla": "Si vos querés verse y estás dispuesto a tomar la iniciativa de concretar. Ojo: es posible que la otra persona no esperaba una respuesta tan concreta y se note incómoda."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Sí, estaría bueno.",
+          "cuando_usarla": "Si querés responder sin comprometerte ni presionar. Devolvés la fórmula con la misma fórmula. Es la respuesta más neutra y socialmente esperada."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "Sí, con gusto. Si algún día tenés ganas de algo concreto, avisame.",
+          "cuando_usarla": "Si querés dejar la puerta abierta sin ser vos quien tenga que insistir. Le pasás la pelota sin presionar."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "'un día de estos'",
+          "significado": "Expresión sin fecha ni propuesta concreta. En el español rioplatense es una fórmula de cierre social conocida, no un plan real."
+        },
+        {
+          "senal": "No hay pregunta de disponibilidad",
+          "significado": "Alguien que quiere verse de verdad suele preguntar '¿qué hacés el finde?' o 'te parece si coordinamos algo'. La ausencia de eso refuerza la lectura de cortesía."
+        }
+      ],
+      "categoria": "cortesia_formula",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 23,
+    "mensaje": "Cualquier cosa contá conmigo.",
+    "categoria_esperada": "cortesia_formula",
+    "categoria_obtenida": "cortesia_formula",
+    "ambiguedad_esperada": "media",
+    "ambiguedad_obtenida": "baja",
+    "intencion_esperada": "Cortesía sin compromiso concreto. Se convierte en real solo si pedís algo puntual.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "baja",
+        "explicacion": "Es una fórmula social de apoyo muy reconocible en el contexto laboral. El significado convencional está bien establecido."
+      },
+      "lectura_literal": "La persona dice que podés contar con ella para lo que necesites.",
+      "interpretaciones": [
+        {
+          "significado": "Es una expresión de solidaridad convencional. Muestra buena voluntad, pero no es una oferta concreta de ayuda. No implica que vaya a hacer algo específico por vos.",
+          "confianza": "alta",
+          "senales": [
+            "\"Cualquier cosa contá conmigo\" es una fórmula social estándar de apoyo, sin especificar qué haría ni cómo."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": false,
+        "que_pide": null,
+        "requiere_respuesta": false,
+        "urgencia": "ninguna"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Gracias, lo voy a tener en cuenta.",
+          "cuando_usarla": "Si querés agradecer y cerrar el intercambio sin comprometerte a nada."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Gracias, se agradece.",
+          "cuando_usarla": "Si preferís responder algo breve y no generar más conversación."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "Gracias. Si en algún momento necesito una mano con X, ¿te parece bien que te avise?",
+          "cuando_usarla": "Si la carga de trabajo es real y querés convertir la fórmula en una oferta concreta y usable."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "\"Cualquier cosa contá conmigo\"",
+          "significado": "Fórmula social de apoyo muy frecuente en contextos laborales. Expresa buena disposición, pero no es un compromiso de acción específica. No hay que leerla como una promesa literal de hacer cualquier cosa."
+        }
+      ],
+      "categoria": "cortesia_formula",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 24,
+    "mensaje": "Lo vemos la semana que viene.",
+    "categoria_esperada": "cortesia_formula",
+    "categoria_obtenida": "desinteres",
+    "ambiguedad_esperada": "media",
+    "ambiguedad_obtenida": "media",
+    "intencion_esperada": "Postergación educada sin compromiso. Conviene dejar fecha agendada por escrito.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "media",
+        "explicacion": "La frase cierra la conversación sin dar una respuesta al pedido. Puede ser una postergación genuina o una forma de evitar el tema sin decir que no."
+      },
+      "lectura_literal": "La persona propone retomar el tema en algún momento de la semana siguiente, sin especificar día ni hora.",
+      "interpretaciones": [
+        {
+          "significado": "El jefe no quiere dar una respuesta ahora y posterga la conversación. Puede ser porque necesita tiempo real para pensarlo, o porque espera que el tema se enfríe y no haya que retomarlo.",
+          "confianza": "media",
+          "senales": [
+            "'La semana que viene' sin fecha ni hora concreta.",
+            "No hay ninguna respuesta al contenido del pedido: ni sí, ni no, ni 'lo pienso'."
+          ]
+        },
+        {
+          "significado": "El jefe genuinamente quiere hablar del tema pero ahora no puede o no es el momento adecuado, y propone retomarlo pronto.",
+          "confianza": "baja",
+          "senales": [
+            "'La semana que viene' establece un plazo, lo que podría indicar intención real de seguir la conversación."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": false,
+        "que_pide": "No hay un pedido explícito, pero la situación requiere que vos hagas seguimiento si querés que el tema no quede en la nada.",
+        "requiere_respuesta": true,
+        "urgencia": "baja"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Perfecto. ¿Podemos agendar un momento concreto para la semana que viene?",
+          "cuando_usarla": "Si querés asegurarte de que la conversación ocurra y tenés confianza para pedirlo."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Bueno, quedamos así entonces.",
+          "cuando_usarla": "Si preferís no presionar ahora y ver si él retoma el tema solo la semana siguiente."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "Entendido. ¿Hay algo que necesitás de mi parte para poder hablar del tema?",
+          "cuando_usarla": "Si querés mantener el tema vivo sin forzar una fecha, y de paso entender si hay algo que está frenando la respuesta."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "'La semana que viene' sin día ni hora",
+          "significado": "Una postergación sin fecha concreta es una señal de desinterés o evitación. No es un compromiso real: no hay nada que te permita hacer seguimiento."
+        },
+        {
+          "senal": "No hay ninguna referencia al contenido del pedido",
+          "significado": "Cuando alguien recibe un pedido de aumento y no dice nada sobre él, ni para bien ni para mal, generalmente está evitando tomar posición. Una respuesta genuinamente interesada suele incluir algo como 'lo tengo que revisar' o 'hablemos de los números'."
+        }
+      ],
+      "categoria": "desinteres",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 25,
+    "mensaje": "Prefiero no meterme en eso.",
+    "categoria_esperada": "limite",
+    "categoria_obtenida": "limite",
+    "ambiguedad_esperada": "baja",
+    "ambiguedad_obtenida": "baja",
+    "intencion_esperada": "Es un límite claro aunque suave. No insistir es la respuesta correcta.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "baja",
+        "explicacion": "El mensaje es directo: marca su propia posición respecto al tema. No hay señales de subtexto relevante."
+      },
+      "lectura_literal": "La persona dice que elige no involucrarse en ese asunto.",
+      "interpretaciones": [
+        {
+          "significado": "No quiere opinar sobre el conflicto. Puede ser porque no quiere quedar en el medio, porque le incomoda el tema, o porque prefiere no tomar partido. No es un rechazo hacia vos.",
+          "confianza": "alta",
+          "senales": [
+            "\"Prefiero no meterme en eso\" — habla de su propia elección, no de vos ni de tu pedido."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": false,
+        "que_pide": null,
+        "requiere_respuesta": false,
+        "urgencia": "ninguna"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Está bien, lo entiendo.",
+          "cuando_usarla": "Si no necesitás nada más de él sobre el tema y querés cerrar el intercambio sin drama."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Bueno, no hay problema. Gracias igual.",
+          "cuando_usarla": "Si querés que sepa que no te molestó su respuesta y dejar la relación en buen lugar."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "Entendido. ¿Hay algo que te haga incómodo que te lo haya preguntado?",
+          "cuando_usarla": "Solo si notás que quedó tensión o si te importa saber si el pedido lo puso en una situación difícil. No es necesario preguntarlo."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "\"Prefiero no meterme en eso\"",
+          "significado": "Usa 'prefiero', que marca una elección personal. Habla de su propia disponibilidad, no evalúa tu pedido ni te critica por haberlo hecho."
+        }
+      ],
+      "categoria": "limite",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 26,
+    "mensaje": "Estoy con mil cosas ahora, después te escribo.",
+    "categoria_esperada": "limite",
+    "categoria_obtenida": "limite",
+    "ambiguedad_esperada": "alta",
+    "ambiguedad_obtenida": "media",
+    "intencion_esperada": "Puede ser literal o un cierre. Sin más señales no se puede distinguir; esperar es lo razonable.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "media",
+        "explicacion": "El mensaje puede ser literal (está ocupado y va a escribir) o puede ser una forma suave de postergar sin intención real de retomar. No hay señal textual que desempate con certeza."
+      },
+      "lectura_literal": "Está ocupado en este momento y promete escribir más tarde.",
+      "interpretaciones": [
+        {
+          "significado": "Está genuinamente ocupado y va a retomar la conversación cuando pueda.",
+          "confianza": "media",
+          "senales": [
+            "'Estoy con mil cosas ahora' describe una situación presente concreta.",
+            "'después te escribo' es un compromiso explícito, aunque sin fecha."
+          ]
+        },
+        {
+          "significado": "No tiene ganas o energía de entrar en una conversación personal en este momento, y posterga sin saber si va a retomar.",
+          "confianza": "media",
+          "senales": [
+            "'después te escribo' es vago: no dice cuándo.",
+            "La respuesta es muy corta para alguien que recibió un mensaje sobre algo personal."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": false,
+        "que_pide": null,
+        "requiere_respuesta": false,
+        "urgencia": "ninguna"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Dale, cuando puedas.",
+          "cuando_usarla": "Si no te urge el tema y podés esperar sin problema."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Tranquilo, no hay apuro. Avisame cuando estés más libre.",
+          "cuando_usarla": "Si querés dejarle la puerta abierta sin presionarlo."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "Perfecto. Si en algún momento tenés un rato, me gustaría contarte algo. Sin urgencia.",
+          "cuando_usarla": "Si querés recordarle suavemente que hay algo pendiente, sin exigir una respuesta inmediata."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "'después te escribo' sin fecha ni hora",
+          "significado": "Una postergación sin ancla temporal puede ser real o puede ser una forma de cerrar la conversación sin rechazarla abiertamente. Desde el texto solo no se puede saber cuál es."
+        },
+        {
+          "senal": "Respuesta muy corta ante un mensaje sobre algo personal",
+          "significado": "No es una señal definitiva, pero sí llama la atención: alguien muy disponible suele dar alguna señal de interés aunque esté ocupado ('¿todo bien?', 'te escribo a la noche')."
+        }
+      ],
+      "categoria": "limite",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 27,
+    "mensaje": "No sé si es el mejor momento para hablar de esto.",
+    "categoria_esperada": "limite",
+    "categoria_obtenida": "limite",
+    "ambiguedad_esperada": "media",
+    "ambiguedad_obtenida": "media",
+    "intencion_esperada": "Pide postergar, no cancelar. Corresponde acordar cuándo sí.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "media",
+        "explicacion": "El mensaje puede ser un límite genuino de timing o una forma de evitar el tema indefinidamente. Hay una señal que inclina levemente hacia el límite, pero sin fecha ni contrapropuesta, la duda queda abierta."
+      },
+      "lectura_literal": "La persona no está segura de que este sea el momento adecuado para hablar del tema.",
+      "interpretaciones": [
+        {
+          "significado": "Ahora no está en condiciones de tener esa conversación, ya sea por el estado emocional, el contexto o el cansancio. No es un rechazo al tema, sino al momento.",
+          "confianza": "media",
+          "senales": [
+            "\"No sé si es el mejor momento\" — habla del momento, no del tema en sí. No dice 'no quiero hablar de esto'."
+          ]
+        },
+        {
+          "significado": "Quiere seguir postergando el tema sin decirlo directamente. El 'no sé si' funciona como amortiguador para no cerrar la puerta, pero tampoco abrirla.",
+          "confianza": "media",
+          "senales": [
+            "El contexto indica que el tema ya venía siendo postergado. Esta respuesta no propone un momento alternativo, lo que refuerza la posibilidad de evitación."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": true,
+        "que_pide": "Que dejes el tema para otro momento, al menos por ahora.",
+        "requiere_respuesta": true,
+        "urgencia": "media"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Okay. ¿Cuándo te parece que sería mejor?",
+          "cuando_usarla": "Si querés respetar el límite pero también asegurarte de que el tema no quede flotando indefinidamente. Es directa sin ser agresiva."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Está bien, no hay apuro. Avisame cuando te sientas más cómodo/a.",
+          "cuando_usarla": "Si preferís darle espacio sin presionar. Útil si la relación está tensa y forzar el momento podría empeorar las cosas."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "¿Preferís que lo dejemos para otro momento, o hay algo que hace que sea difícil hablar de esto en general?",
+          "cuando_usarla": "Si sentís que puede haber algo más detrás y querés entender si es el timing o el tema en sí lo que genera resistencia. Usala solo si la relación tiene espacio para esa pregunta ahora."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "\"No sé si es el mejor momento\"",
+          "significado": "Habla del momento, no del tema. Eso es una señal de límite de timing, no de rechazo al tema."
+        },
+        {
+          "senal": "No propone un momento alternativo",
+          "significado": "Cuando alguien solo quiere postergar por el contexto, suele ofrecer una alternativa. La ausencia de eso abre la posibilidad de evitación."
+        },
+        {
+          "senal": "Contexto: el tema venía siendo postergado",
+          "significado": "Un patrón de postergación previa hace que esta respuesta sea más difícil de leer como un límite puntual y no como una estrategia de evitación."
+        }
+      ],
+      "categoria": "limite",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 28,
+    "mensaje": "Me gustaría, pero no puedo comprometerme.",
+    "categoria_esperada": "limite",
+    "categoria_obtenida": "limite",
+    "ambiguedad_esperada": "baja",
+    "ambiguedad_obtenida": "baja",
+    "intencion_esperada": "Es un no a comprometerse, sin cerrar la puerta del todo. No es un 'quizás'.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "baja",
+        "explicacion": "El mensaje es directo: expresa interés pero declara explícitamente que no puede comprometerse. No hay señales que contradigan esa lectura."
+      },
+      "lectura_literal": "La persona dice que le gustaría participar, pero que no puede asumir un compromiso.",
+      "interpretaciones": [
+        {
+          "significado": "Le interesa el proyecto genuinamente, pero no puede garantizar su participación. Es un 'no' a la colaboración formal, aunque sin cerrar la puerta del todo.",
+          "confianza": "alta",
+          "senales": [
+            "\"me gustaría\" indica interés real o al menos cortesía hacia la propuesta",
+            "\"no puedo comprometerme\" es una negativa explícita al compromiso, no una postergación ni una excusa vaga"
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": false,
+        "que_pide": null,
+        "requiere_respuesta": true,
+        "urgencia": "baja"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Entendido, gracias por avisarme. Si en algún momento cambia la situación, avisame.",
+          "cuando_usarla": "Cuando querés cerrar el tema sin drama y dejar la puerta abierta sin presionar."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Gracias por responder. ¿Hay alguna forma más acotada de participar que sí te funcione, o preferís que lo dejemos así por ahora?",
+          "cuando_usarla": "Cuando el proyecto admite formas de colaboración menores y querés explorar si hay algo que sí pueda hacer, sin forzar."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "Entendido. ¿Es algo de timing, o es que el proyecto en sí no te cierra? Solo para saber si tiene sentido volver a consultarte más adelante.",
+          "cuando_usarla": "Cuando necesitás saber si el 'no' es definitivo o circunstancial, y tenés suficiente confianza para preguntarlo sin que suene a presión."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "\"no puedo comprometerme\"",
+          "significado": "Declara un límite sobre su propia disponibilidad o capacidad. No te está pidiendo nada ni criticando el proyecto."
+        },
+        {
+          "senal": "\"me gustaría\"",
+          "significado": "Suaviza el rechazo. Puede ser interés genuino o cortesía, pero en ningún caso cambia el 'no' al compromiso."
+        }
+      ],
+      "categoria": "limite",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 29,
+    "mensaje": "ok",
+    "categoria_esperada": "ambiguedad_genuina",
+    "categoria_obtenida": "ambiguedad_genuina",
+    "ambiguedad_esperada": "alta",
+    "ambiguedad_obtenida": "media",
+    "intencion_esperada": "No se puede saber si es neutro, molesto o apurado. Un 'ok' corto no prueba enojo. Preguntar es la salida.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "media",
+        "explicacion": "Un 'ok' solo puede significar acuse de recibo, aprobación, o desaprobación contenida. El contexto de justificación previa inclina hacia algo más que simple confirmación, pero no hay señal textual que desempate con certeza."
+      },
+      "lectura_literal": "Recibí lo que dijiste.",
+      "interpretaciones": [
+        {
+          "significado": "Acusó recibo de tu explicación sin opinar. No aprueba ni desaprueba, solo cierra el intercambio.",
+          "confianza": "media",
+          "senales": [
+            "'ok' como respuesta a una explicación larga es una fórmula de cierre mínima.",
+            "No agrega preguntas ni comentarios, lo que sugiere que no quiere extender la conversación."
+          ]
+        },
+        {
+          "significado": "Recibió la explicación pero no está conforme. El 'ok' es seco a propósito: no valida lo que dijiste, solo lo registra.",
+          "confianza": "media",
+          "senales": [
+            "Respuesta desproporcionadamente corta frente a varios mensajes de explicación.",
+            "En un contexto laboral con un jefe, una respuesta sin ningún gesto de cierre positivo ('gracias', 'entendido', 'no hay problema') puede indicar distancia o incomodidad."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": false,
+        "que_pide": null,
+        "requiere_respuesta": false,
+        "urgencia": "ninguna"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Perfecto. Aviso cuando esté lista la entrega.",
+          "cuando_usarla": "Si preferís cerrar el tema sin darle más peso y seguir adelante."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Bien. Si necesitás algo más de mi parte sobre esto, avisame.",
+          "cuando_usarla": "Si querés dejar la puerta abierta por si tu jefe tiene algo más que decir, sin forzar una conversación."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "¿Quedó claro o preferís que hablemos un momento sobre cómo evitar que pase de nuevo?",
+          "cuando_usarla": "Si la incertidumbre te genera ansiedad y preferís saber con certeza cómo quedó la cosa. Tiene el riesgo de reabrir el tema, pero te da información real."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "'ok'",
+          "significado": "Respuesta de una sola palabra a varios mensajes de explicación. La desproporción entre lo que vos escribiste y lo que respondió es la señal principal de ambigüedad."
+        },
+        {
+          "senal": "Ausencia de cualquier gesto positivo",
+          "significado": "En contextos laborales, frases como 'gracias por explicar' o 'entendido, no te preocupes' son comunes cuando alguien está conforme. Su ausencia no confirma disconformidad, pero sí la hace posible."
+        }
+      ],
+      "categoria": "ambiguedad_genuina",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 0.5
+  },
+  {
+    "id": 30,
+    "mensaje": "Bueno.",
+    "categoria_esperada": "ambiguedad_genuina",
+    "categoria_obtenida": "ambiguedad_genuina",
+    "ambiguedad_esperada": "alta",
+    "ambiguedad_obtenida": "alta",
+    "intencion_esperada": "Puede ser cierre conciliador o resignación molesta. No se determina desde el texto.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "alta",
+        "explicacion": "Una sola palabra después de una discusión puede significar cosas muy distintas: aceptación, cierre frío, resignación, o simplemente acuse de recibo. No hay ninguna señal textual que desempate."
+      },
+      "lectura_literal": "La persona dice 'bueno', que en español puede funcionar como asentimiento, como cierre de conversación, o como respuesta de acuse de recibo.",
+      "interpretaciones": [
+        {
+          "significado": "Está cerrando la conversación sin querer seguir discutiendo. No es acuerdo real, es un 'ya está, no hablo más'.",
+          "confianza": "media",
+          "senales": [
+            "Respuesta de una sola palabra después de una discusión.",
+            "No agrega nada, no retoma ningún punto de lo que se habló."
+          ]
+        },
+        {
+          "significado": "Está aceptando lo que se dijo o acordó, y para ella/él el tema está cerrado de forma genuina.",
+          "confianza": "media",
+          "senales": [
+            "'Bueno' es una forma estándar de asentir en español rioplatense.",
+            "No hay señales textuales de enojo explícito como puntos suspensivos, mayúsculas o ausencia de respuesta."
+          ]
+        },
+        {
+          "significado": "Está molesta/o todavía y responde lo mínimo para no ignorar el mensaje, pero sin ganas de hablar.",
+          "confianza": "media",
+          "senales": [
+            "Respuesta extremadamente corta para el peso emocional del contexto.",
+            "No hay ningún gesto de reapertura ni pregunta ni comentario adicional."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": false,
+        "que_pide": null,
+        "requiere_respuesta": true,
+        "urgencia": "baja"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "¿Estamos bien?",
+          "cuando_usarla": "Si querés saber rápido cómo está el terreno sin entrar en detalles todavía."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Bueno. Cuando quieras hablamos.",
+          "cuando_usarla": "Si preferís darle espacio y no presionar, pero dejar la puerta abierta."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "No sé bien cómo tomarte el 'bueno'. ¿Estás bien con lo que hablamos o preferís que lo dejemos por ahora?",
+          "cuando_usarla": "Si la ambigüedad te genera ansiedad y necesitás saber en qué punto están. Es la opción más honesta."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "\"Bueno.\"",
+          "significado": "Una sola palabra con punto final después de una discusión es una respuesta mucho más corta de lo que el contexto emocional ameritaría. Eso es lo único que se puede leer con certeza: es mínima. Lo que hay detrás no se puede saber desde el texto."
+        }
+      ],
+      "categoria": "ambiguedad_genuina",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 0.5
+  },
+  {
+    "id": 31,
+    "mensaje": "Como quieras.",
+    "categoria_esperada": "ambiguedad_genuina",
+    "categoria_obtenida": "ambiguedad_genuina",
+    "ambiguedad_esperada": "alta",
+    "ambiguedad_obtenida": "media",
+    "intencion_esperada": "Flexibilidad genuina o fastidio contenido: ambas son igual de posibles.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "media",
+        "explicacion": "La frase es brevísima y puede ser aceptación genuina o descontento contenido. El contexto ayuda pero no alcanza para desempatar con certeza."
+      },
+      "lectura_literal": "La persona acepta lo que vos decidas, sin expresar preferencia propia.",
+      "interpretaciones": [
+        {
+          "significado": "Le da igual el lugar y te deja decidir sin problema. Aceptación real.",
+          "confianza": "media",
+          "senales": [
+            "'Como quieras' es una fórmula de delegación genuina en muchos contextos informales entre amigos."
+          ]
+        },
+        {
+          "significado": "No le gustó el cambio pero no quiere discutirlo. Lo acepta con cierto fastidio o resignación.",
+          "confianza": "media",
+          "senales": [
+            "La respuesta es más corta de lo esperable ante una propuesta de cambio: no hay '¡dale!' ni ningún marcador de entusiasmo.",
+            "No hay contrapropuesta ni pregunta sobre el nuevo lugar, lo que puede indicar desinterés o molestia contenida."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": false,
+        "que_pide": null,
+        "requiere_respuesta": false,
+        "urgencia": "ninguna"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Bueno, vamos a [lugar nuevo] entonces. ¿A qué hora te viene bien?",
+          "cuando_usarla": "Si leés la respuesta como aceptación genuina y querés avanzar sin darle más vueltas."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Dale. Igual si preferís quedarnos en el otro lugar, me da igual a mí también.",
+          "cuando_usarla": "Si sospechás que no le gustó el cambio pero no querés preguntarle directamente. Le abrís la puerta sin presionarlo."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "¿Estás bien con el cambio o preferís el lugar de antes?",
+          "cuando_usarla": "Si la brevedad te generó duda real y preferís saber con certeza antes de confirmar."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "'Como quieras.'",
+          "significado": "Respuesta de una sola frase a una propuesta que normalmente genera algo de intercambio. La brevedad puede ser indiferencia real o señal de que algo no le cerró pero no lo va a decir."
+        },
+        {
+          "senal": "Ausencia de cualquier marcador positivo",
+          "significado": "Entre amigos, una aceptación cómoda suele traer algo más: un 'dale', una pregunta sobre el lugar, un emoji. La ausencia total de eso es lo que genera la duda."
+        }
+      ],
+      "categoria": "ambiguedad_genuina",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 32,
+    "mensaje": "Está todo bien.",
+    "categoria_esperada": "ambiguedad_genuina",
+    "categoria_obtenida": "ambiguedad_genuina",
+    "ambiguedad_esperada": "alta",
+    "ambiguedad_obtenida": "alta",
+    "intencion_esperada": "Puede ser literal o exactamente lo contrario. La forma de resolverlo es una pregunta abierta, no interpretar.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "alta",
+        "explicacion": "La frase es una de las más ambiguas del español rioplatense: puede ser literal o puede ser exactamente lo contrario, y el contexto no alcanza para desempatar."
+      },
+      "lectura_literal": "No hay ningún problema. Nada de lo que dijiste me molestó.",
+      "interpretaciones": [
+        {
+          "significado": "Sí le molestó algo, pero no quiere decirlo directamente. 'Está todo bien' es una forma de cerrar la conversación sin resolver el conflicto.",
+          "confianza": "media",
+          "senales": [
+            "Vos preguntaste específicamente si le había molestado algo: esa pregunta no surge de la nada, hay algo que lo motivó.",
+            "La respuesta es muy corta para lo que la pregunta ameritaba. Una respuesta genuinamente tranquilizadora suele traer algo más: 'no, para nada', 'por qué decís eso', 'qué te hizo pensar eso'.",
+            "No hay ningún gesto de acercamiento ni pregunta de vuelta."
+          ]
+        },
+        {
+          "significado": "Realmente está todo bien y no le molestó nada. La brevedad es su estilo o simplemente no le dio más importancia al tema.",
+          "confianza": "media",
+          "senales": [
+            "Las palabras dicen exactamente eso: que no hay problema.",
+            "Algunas personas responden corto porque no sienten que haya mucho que agregar, no porque estén enojadas."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": false,
+        "que_pide": null,
+        "requiere_respuesta": true,
+        "urgencia": "baja"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Bueno, me alegra. Igual si en algún momento algo te molesta, podés decirme.",
+          "cuando_usarla": "Si querés dejar la puerta abierta sin presionar. Le das espacio para hablar si quiere, pero no lo obligás."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Ok, gracias por decirme.",
+          "cuando_usarla": "Si preferís no profundizar ahora y ver cómo sigue la relación en los próximos días. A veces el tiempo aclara más que las palabras."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "Me alegra, aunque te pregunto porque me quedé con la duda. ¿Seguro?",
+          "cuando_usarla": "Si la relación aguanta la pregunta directa y preferís saber con certeza antes de quedarte rumiando. Usala solo si tienen confianza para ese nivel de conversación."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "\"Está todo bien.\"",
+          "significado": "Respuesta mínima a una pregunta que invitaba a más. En español rioplatense, esta frase dicha sola después de una pregunta sobre un conflicto es una señal clásica de cierre defensivo, aunque no siempre lo es."
+        },
+        {
+          "senal": "No hay pregunta de vuelta ni gesto de acercamiento.",
+          "significado": "Cuando alguien genuinamente quiere que el otro se quede tranquilo, suele agregar algo. La ausencia de eso es lo que genera la duda."
+        },
+        {
+          "senal": "El contexto: vos preguntaste si le había molestado algo.",
+          "significado": "Esa pregunta implica que algo pasó. Si no hubiera pasado nada, no habrías preguntado. Eso pesa al interpretar la respuesta."
+        }
+      ],
+      "categoria": "ambiguedad_genuina",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 33,
+    "mensaje": "Nada, dejá.",
+    "categoria_esperada": "ambiguedad_genuina",
+    "categoria_obtenida": "ambiguedad_genuina",
+    "ambiguedad_esperada": "alta",
+    "ambiguedad_obtenida": "alta",
+    "intencion_esperada": "Puede ser desistir sin drama o molestia acumulada. No se puede saber; preguntar sin presionar.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "alta",
+        "explicacion": "El mensaje es mínimo y el contexto no revela qué iba a decir ni por qué se frenó. No hay señales textuales que permitan saber si es enojo, vergüenza, cansancio o algo más."
+      },
+      "lectura_literal": "La persona empezó a decir algo, se interrumpió y pidió que se ignore lo que iba a decir.",
+      "interpretaciones": [
+        {
+          "significado": "Se sintió incómoda o vulnerable con lo que iba a decir y prefirió no seguir. No necesariamente hay enojo hacia vos.",
+          "confianza": "media",
+          "senales": [
+            "Se frenó antes de terminar la idea, lo que sugiere que el freno fue interno, no una reacción a algo que vos hiciste."
+          ]
+        },
+        {
+          "significado": "Está enojada o frustrada con algo y el 'dejá' es una forma de cerrarse, posiblemente esperando que insistas o que notes que algo está mal.",
+          "confianza": "media",
+          "senales": [
+            "'Nada, dejá' es una fórmula que en contextos de tensión suele señalar que sí hay algo, pero que la persona no quiere o no puede decirlo directamente."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": true,
+        "que_pide": "No está claro. Puede estar pidiendo que la dejes estar, o puede estar esperando que preguntes qué le pasa.",
+        "requiere_respuesta": true,
+        "urgencia": "media"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Bueno, cuando quieras contarme, acá estoy.",
+          "cuando_usarla": "Si querés dejarle el espacio abierto sin presionar. Le decís que notaste que había algo, pero no insistís."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Dale. Avisame si después querés hablar.",
+          "cuando_usarla": "Si preferís respetar el cierre sin agregar nada. Es la opción más neutra."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "¿Estás bien? Noté que ibas a decir algo.",
+          "cuando_usarla": "Si sentís que puede estar mal y querés abrir la puerta sin forzar. Preguntás por ella, no por lo que iba a decir."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "\"Nada, dejá\"",
+          "significado": "Fórmula que descarta lo que se iba a decir, pero el hecho de que haya empezado a hablar indica que sí había algo. El 'nada' no es literal."
+        },
+        {
+          "senal": "Se frenó antes de terminar",
+          "significado": "El freno fue de ella, no una reacción a algo tuyo. Eso reduce la probabilidad de que sea un reproche directo hacia vos."
+        }
+      ],
+      "categoria": "ambiguedad_genuina",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 34,
+    "mensaje": "Llego 10 minutos tarde, hay un corte en Corrientes.",
+    "categoria_esperada": "literal",
+    "categoria_obtenida": "literal",
+    "ambiguedad_esperada": "baja",
+    "ambiguedad_obtenida": "baja",
+    "intencion_esperada": "Es exactamente lo que dice. No hay subtexto. Buscar capas acá es el error a evitar.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "baja",
+        "explicacion": "El mensaje da una razón concreta y un tiempo estimado. No hay señales de subtexto."
+      },
+      "lectura_literal": "El amigo avisa que va a llegar 10 minutos después de lo acordado porque hay un corte de tránsito en la calle Corrientes.",
+      "interpretaciones": [
+        {
+          "significado": "Está avisando con anticipación para que no te preocupes ni lo esperes sin saber qué pasa.",
+          "confianza": "alta",
+          "senales": [
+            "\"Llego 10 minutos tarde\"",
+            "\"hay un corte en Corrientes\""
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": true,
+        "que_pide": "Que sepas que llega tarde y que lo esperes. No pide nada más.",
+        "requiere_respuesta": true,
+        "urgencia": "baja"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Dale, te espero.",
+          "cuando_usarla": "Siempre funciona. Es lo que la situación pide."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Bueno, sin drama. Avisame si se complica más.",
+          "cuando_usarla": "Si querés dejarle la puerta abierta por si el retraso se extiende."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "Perfecto, yo estoy en [lugar]. Avisame cuando estés cerca.",
+          "cuando_usarla": "Si todavía no confirmaron el punto exacto de encuentro."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "\"hay un corte en Corrientes\"",
+          "significado": "Da una causa externa y verificable. Eso hace que el aviso sea informativo, no una excusa ni un pedido encubierto."
+        },
+        {
+          "senal": "\"Llego 10 minutos tarde\"",
+          "significado": "Tiempo estimado concreto. Si quisiera cancelar o esquivar, no daría un número tan preciso."
+        }
+      ],
+      "categoria": "literal",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 35,
+    "mensaje": "¿Te lo mando en PDF o en Word?",
+    "categoria_esperada": "literal",
+    "categoria_obtenida": "literal",
+    "ambiguedad_esperada": "baja",
+    "ambiguedad_obtenida": "baja",
+    "intencion_esperada": "Pregunta operativa. No hay carga emocional.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "baja",
+        "explicacion": "El mensaje pregunta exactamente lo que dice: en qué formato querés recibir el documento."
+      },
+      "lectura_literal": "El compañero tiene el documento listo y pregunta si preferís recibirlo en PDF o en Word.",
+      "interpretaciones": [
+        {
+          "significado": "Está listo para mandarte el documento y necesita saber el formato antes de hacerlo.",
+          "confianza": "alta",
+          "senales": [
+            "\"¿Te lo mando en PDF o en Word?\" es una pregunta de opción cerrada que pide una preferencia concreta."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": true,
+        "que_pide": "Que le digas qué formato preferís: PDF o Word.",
+        "requiere_respuesta": true,
+        "urgencia": "baja"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "En PDF, gracias.",
+          "cuando_usarla": "Cuando ya sabés qué formato necesitás."
+        },
+        {
+          "registro": "cauta",
+          "texto": "En Word si podés, así puedo editarlo. Si no, PDF está bien.",
+          "cuando_usarla": "Cuando tenés una preferencia pero querés darle flexibilidad."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "¿Podés mandármelo en los dos formatos? Necesito editarlo pero también tener una versión final.",
+          "cuando_usarla": "Cuando necesitás ambos formatos por razones distintas."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "\"¿Te lo mando en PDF o en Word?\"",
+          "significado": "Pregunta de opción cerrada. No hay subtexto: solo necesita una respuesta para poder enviarte lo que le pediste."
+        }
+      ],
+      "categoria": "literal",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 36,
+    "mensaje": "La reunión se pasó a las 15.",
+    "categoria_esperada": "literal",
+    "categoria_obtenida": "literal",
+    "ambiguedad_esperada": "baja",
+    "ambiguedad_obtenida": "media",
+    "intencion_esperada": "Información pura. No indica molestia ni reproche.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "media",
+        "explicacion": "En español rioplatense 'se pasó a las 15' puede significar que se movió para las 15 o que se pasó (superó) las 15 y ya terminó. El contexto hace más probable la primera lectura, pero no la descarta del todo."
+      },
+      "lectura_literal": "La reunión que estaba agendada a las 11 ahora tiene un nuevo horario o ya superó las 15.",
+      "interpretaciones": [
+        {
+          "significado": "La reunión se reprogramó: ya no es a las 11, ahora es a las 15.",
+          "confianza": "alta",
+          "senales": [
+            "'se pasó a las 15' como sinónimo de 'se movió para las 15', uso habitual en contextos laborales para informar cambios de horario."
+          ]
+        },
+        {
+          "significado": "La reunión ya ocurrió y terminó pasadas las 15 (es decir, se extendió o demoró hasta después de esa hora).",
+          "confianza": "baja",
+          "senales": [
+            "'se pasó' puede leerse como 'superó' o 'excedió' las 15, aunque este uso es menos frecuente en un aviso por Slack."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": true,
+        "que_pide": "Que te anotes el nuevo horario y aparezcas a las 15 en lugar de las 11.",
+        "requiere_respuesta": true,
+        "urgencia": "media"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Anotado, nos vemos a las 15.",
+          "cuando_usarla": "Si estás seguro de que es un cambio de horario y la relación con tu jefe es fluida."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Perfecto, gracias por avisarme.",
+          "cuando_usarla": "Si estás seguro del cambio pero preferís no comprometerte a nada más por escrito."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "¿La reunión queda para las 15 de hoy entonces?",
+          "cuando_usarla": "Si tenés alguna duda sobre si es hoy, si es un cambio o si ya pasó. Es la más segura si algo no cierra."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "'se pasó a las 15'",
+          "significado": "En contextos laborales rioplatenses, esta frase se usa casi siempre para informar un cambio de horario, no para reportar que algo ya ocurrió."
+        },
+        {
+          "senal": "Canal Slack, remitente es el jefe",
+          "significado": "Un aviso por Slack de un jefe sobre una reunión es casi siempre informativo y espera confirmación de recepción."
+        }
+      ],
+      "categoria": "literal",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 37,
+    "mensaje": "Gracias por mandarlo, lo reviso mañana y te digo.",
+    "categoria_esperada": "literal",
+    "categoria_obtenida": "literal",
+    "ambiguedad_esperada": "baja",
+    "ambiguedad_obtenida": "baja",
+    "intencion_esperada": "Acuse de recibo normal y positivo. La brevedad no indica desaprobación.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "baja",
+        "explicacion": "El mensaje es una respuesta administrativa estándar a una entrega. No hay señales de tensión ni de evasión."
+      },
+      "lectura_literal": "La persona recibió el archivo, lo va a leer mañana y después va a dar una respuesta.",
+      "interpretaciones": [
+        {
+          "significado": "Acuse de recibo sin más. No hay evaluación todavía, solo confirmación de que llegó y un plazo concreto para el feedback.",
+          "confianza": "alta",
+          "senales": [
+            "'Gracias por mandarlo' confirma recepción.",
+            "'lo reviso mañana y te digo' da un plazo específico, no una postergación vaga."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": false,
+        "que_pide": null,
+        "requiere_respuesta": false,
+        "urgencia": "ninguna"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Perfecto, quedo a disposición.",
+          "cuando_usarla": "Si querés confirmar que recibiste el mensaje y no necesitás agregar nada más."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Gracias, cuando puedas me avisás.",
+          "cuando_usarla": "Si preferís no presionar con el plazo 'mañana' y dejarle el tiempo que necesite."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "Perfecto. Si necesitás que te explique algo del trabajo antes de revisarlo, avisame.",
+          "cuando_usarla": "Si hay partes del trabajo que podrían generar preguntas y querés facilitar la revisión."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "'lo reviso mañana y te digo'",
+          "significado": "Plazo concreto. No es una postergación indefinida ni una evasión. Indica intención real de responder."
+        },
+        {
+          "senal": "'Gracias por mandarlo'",
+          "significado": "Fórmula de cortesía estándar en contexto laboral. No implica evaluación positiva ni negativa del trabajo."
+        }
+      ],
+      "categoria": "literal",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 38,
+    "mensaje": "Siempre pasa lo mismo con vos.",
+    "categoria_esperada": "conflicto",
+    "categoria_obtenida": "conflicto",
+    "ambiguedad_esperada": "baja",
+    "ambiguedad_obtenida": "baja",
+    "intencion_esperada": "El 'siempre' señala acumulación previa: el reclamo no es solo por hoy. Responder al hecho puntual no alcanza.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "baja",
+        "explicacion": "El mensaje es un reproche directo. La palabra 'siempre' y el contexto de reincidencia no dejan lugar a otra lectura."
+      },
+      "lectura_literal": "La persona dice que este tipo de situación se repite de forma constante cuando se trata de vos.",
+      "interpretaciones": [
+        {
+          "significado": "Tu pareja está expresando frustración acumulada. No habla solo de hoy: habla de un patrón que siente que se repite. El 'siempre' es una señal de que esto viene de antes y que esta vez fue la gota que rebalsó.",
+          "confianza": "alta",
+          "senales": [
+            "\"Siempre pasa lo mismo\"",
+            "\"con vos\" — te señala a vos como causa del patrón",
+            "Contexto: segunda vez en el mes que llegás tarde"
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": true,
+        "que_pide": "Que reconozcas lo que pasó y que haya alguna conversación sobre eso. No pide una solución en este mensaje, pero sí que no lo ignores.",
+        "requiere_respuesta": true,
+        "urgencia": "media"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Tenés razón, pasó dos veces este mes y entiendo que eso molesta. ¿Querés que hablemos?",
+          "cuando_usarla": "Si querés reconocer el hecho sin entrar en defensiva y abrir el diálogo."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Sé que llegué tarde de nuevo. No quiero ignorar eso.",
+          "cuando_usarla": "Si el clima está tenso y preferís no decir demasiado todavía, pero sí mostrar que escuchaste."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "Cuando decís 'siempre pasa lo mismo', ¿me podés contar qué es lo que más te molesta? Quiero entender bien.",
+          "cuando_usarla": "Si sentís que hay algo más detrás del mensaje y querés que lo diga con más detalle antes de responder."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "\"Siempre\"",
+          "significado": "Generalización que indica frustración acumulada, no solo por el evento de hoy."
+        },
+        {
+          "senal": "\"pasa lo mismo\"",
+          "significado": "Nombra un patrón repetido, no un hecho aislado."
+        },
+        {
+          "senal": "\"con vos\"",
+          "significado": "Te ubica como causa del patrón. No es una queja genérica: es dirigida."
+        },
+        {
+          "senal": "Contexto: segunda vez en el mes",
+          "significado": "Le da base concreta al 'siempre'. No es una exageración sin fundamento."
+        }
+      ],
+      "categoria": "conflicto",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 39,
+    "mensaje": "No hace falta que me contestes así.",
+    "categoria_esperada": "conflicto",
+    "categoria_obtenida": "critica_suave",
+    "ambiguedad_esperada": "baja",
+    "ambiguedad_obtenida": "baja",
+    "intencion_esperada": "Percibió un tono que quizá no quisiste transmitir. Pide reparación, no discusión sobre si fue así.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "baja",
+        "explicacion": "El mensaje tiene una señal clara de malestar por la forma en que respondiste. No hay lecturas opuestas sostenibles."
+      },
+      "lectura_literal": "No es necesario que me respondas de esa manera.",
+      "interpretaciones": [
+        {
+          "significado": "Le molestó cómo le respondiste. Probablemente sintió que fue seco, cortante o descortés, y te lo está diciendo.",
+          "confianza": "alta",
+          "senales": [
+            "\"No hace falta que me contestes así\"",
+            "El 'así' apunta directamente a la forma de tu respuesta anterior, no al contenido."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": true,
+        "que_pide": "Que en el futuro le respondas con más consideración, o que reconozcas que esta vez no estuvo bien.",
+        "requiere_respuesta": true,
+        "urgencia": "media"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Tenés razón, estaba apurado y quedó seco. No era la intención.",
+          "cuando_usarla": "Si tenés buena relación con él y querés cerrar el tema rápido y sin drama."
+        },
+        {
+          "registro": "cauta",
+          "texto": "Perdón si sonó mal, no fue con mala onda. Estaba en el medio de algo.",
+          "cuando_usarla": "Si no estás seguro de cómo tomó el mensaje y preferís suavizar sin asumir demasiado."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "¿Te pareció que fui cortante? No era la intención, pero entiendo si lo pareció.",
+          "cuando_usarla": "Si querés confirmar qué fue exactamente lo que le molestó antes de disculparte."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "\"No hace falta que me contestes así\"",
+          "significado": "La palabra 'así' señala directamente tu respuesta anterior como el problema. No es una queja general: es una crítica a algo concreto que hiciste."
+        },
+        {
+          "senal": "\"No hace falta\"",
+          "significado": "Es una forma atenuada de decir 'no me gustó'. En lugar de decir 'me molestó', usa una construcción impersonal para suavizarlo. Eso es una crítica suave, no un ataque."
+        }
+      ],
+      "categoria": "critica_suave",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  },
+  {
+    "id": 40,
+    "mensaje": "Hacé lo que quieras.",
+    "categoria_esperada": "conflicto",
+    "categoria_obtenida": "conflicto",
+    "ambiguedad_esperada": "baja",
+    "ambiguedad_obtenida": "baja",
+    "intencion_esperada": "No es permiso literal: es enojo y retiro de la conversación. Tomarlo literalmente escala el conflicto.",
+    "salida": {
+      "ambiguedad": {
+        "nivel": "baja",
+        "explicacion": "En este contexto específico, la frase tiene una lectura dominante muy clara: no es permiso real, es malestar expresado con distancia."
+      },
+      "lectura_literal": "Te da libertad total para hacer lo que decidiste.",
+      "interpretaciones": [
+        {
+          "significado": "Está enojada o herida, y se está retirando de la discusión. No te está dando permiso genuino: te está diciendo que no va a seguir peleando, pero que no está de acuerdo.",
+          "confianza": "alta",
+          "senales": [
+            "\"Hacé lo que quieras\" dicho después de que vos ya anunciaste tu decisión no agrega información nueva: no tiene función literal.",
+            "El contexto previo indica que a ella 'no le cerraba', o sea que hay desacuerdo activo.",
+            "Presencial: el tono y el cierre abrupto de la conversación refuerzan la lectura de retirada."
+          ]
+        },
+        {
+          "significado": "Aceptó la situación y realmente te está dejando decidir sin resentimiento.",
+          "confianza": "baja",
+          "senales": [
+            "La frase, leída sola, sí podría ser permiso genuino.",
+            "No hay información sobre el tono de voz o lenguaje corporal que confirme o descarte esto."
+          ]
+        }
+      ],
+      "pedido": {
+        "hay_pedido": true,
+        "que_pide": "Que notes que está mal. Posiblemente que reconsideres, o al menos que reconozcas su malestar antes de cerrar el tema.",
+        "requiere_respuesta": true,
+        "urgencia": "media"
+      },
+      "respuestas": [
+        {
+          "registro": "directa",
+          "texto": "Sé que no te cierra. No quiero que quede así entre nosotros.",
+          "cuando_usarla": "Si estás seguro de que está enojada y querés abrir el diálogo sin ceder en tu decisión."
+        },
+        {
+          "registro": "cauta",
+          "texto": "¿Estás bien con esto o preferís que hablemos más?",
+          "cuando_usarla": "Si no estás seguro de cómo está y querés darle espacio para decirlo sin presionarla."
+        },
+        {
+          "registro": "aclaratoria",
+          "texto": "Cuando decís 'hacé lo que quieras', ¿me estás diciendo que está bien o que seguís sin estar de acuerdo?",
+          "cuando_usarla": "Si necesitás saber exactamente en qué punto están antes de seguir. Es directa pero puede sentirse confrontacional en el momento."
+        }
+      ],
+      "por_que": [
+        {
+          "senal": "\"Hacé lo que quieras\" después de que vos ya anunciaste tu decisión",
+          "significado": "No cumple ninguna función informativa. Cuando alguien dice esto después de un desacuerdo, casi siempre es una señal de retirada emocional, no de acuerdo real."
+        },
+        {
+          "senal": "Contexto: 'a ella no le cerraba'",
+          "significado": "Había desacuerdo activo. Una resolución genuina suele venir con alguna explicación o cambio de postura, no con una frase de tres palabras."
+        }
+      ],
+      "categoria": "conflicto",
+      "bandera_seguridad": null
+    },
+    "error": null,
+    "acierto_intencion_manual": 1
+  }
+]
