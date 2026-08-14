@@ -112,7 +112,7 @@ export default function Home() {
                 ? "border-borde bg-blanco text-negro hover:bg-papel"
                 : v === "practicar"
                   ? "border-rosa-hondo bg-rosa-claro text-negro"
-                  : "border-negro bg-negro text-blanco"
+                  : "border-celeste-marca bg-celeste-marca text-negro"
             }`}
           >
             {etiqueta}
@@ -170,7 +170,7 @@ export default function Home() {
             <button
               type="submit"
               disabled={cargando}
-              className="min-h-[48px] w-full rounded bg-negro px-4 py-3 text-base font-medium text-blanco disabled:opacity-50"
+              className="min-h-[48px] w-full rounded bg-celeste-marca px-4 py-3 text-base font-medium text-negro hover:opacity-90 disabled:opacity-50"
             >
               {cargando ? "Analizando..." : "Traducir"}
             </button>

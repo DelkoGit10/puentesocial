@@ -34,5 +34,6 @@ resultado ya validado. Los archivos `eval/resultados-*.json` son la evidencia de
 
 ## Deploy
 
-Desplegado en Vercel. La API key vive únicamente en las variables de entorno del proyecto en
-Vercel — nunca en el repo.
+Desplegado en Vercel: **[puentesocial.vercel.app](https://puentesocial.vercel.app)** — único
+dominio de la app. La API key vive únicamente en las variables de entorno del proyecto en
+Vercel, nunca en el repo.
