@@ -8,14 +8,24 @@
   --papel: #fbfcfd; /* fondo de página */
   --borde: #e6eaee; /* hairlines */
 
-  /* Celeste — estructura, certeza, acciones */
-  --celeste-claro: #dff1fa; /* fondos de píldora */
-  --celeste-medio: #9cd2ea; /* bordes, subrayados suaves */
-  --celeste-hondo: #17698f; /* subrayado de señales, foco, énfasis — nunca texto */
+  /* Celeste y rosa — hex exacto del logo (cian y magenta neón).
+     --celeste-marca / --rosa-marca son el color exacto, reservados para el
+     isotipo y acentos grandes. El cian puro (#00FFFF) casi no tiene
+     contraste sobre blanco (~1.25:1, muy por debajo del mínimo de 3:1 para
+     bordes/foco), así que --celeste-hondo es una versión bien más oscura
+     del mismo tono para uso funcional: ahí sí importa que se vea. El
+     magenta puro (#FF00FF) ronda 3:1, así que --rosa-hondo es apenas más
+     oscuro, para tener margen. Los tonos "claro"/"medio" son mezclas con
+     blanco de los colores exactos, para fondos de píldora. */
+  --celeste-marca: #00ffff; /* isotipo, acentos grandes — no usar en bordes finos */
+  --celeste-claro: #e6ffff; /* fondos de píldora */
+  --celeste-medio: #b3ffff; /* fondos de píldora, nivel alto */
+  --celeste-hondo: #0e8a99; /* subrayado de señales, foco, bordes — nunca texto */
 
-  /* Rosa — solo alertas y el resaltado de señales */
-  --rosa-claro: #fbe2ea; /* fondo de ANGUSTIA_GENUINA */
-  --rosa-hondo: #9e2a47; /* subrayado de señales, borde — nunca texto */
+  /* Rosa — solo alertas, la sección Practicar y el resaltado de señales */
+  --rosa-marca: #ff00ff; /* isotipo */
+  --rosa-claro: #ffe6ff; /* fondo de ANGUSTIA_GENUINA, fondo de pestañas activas de Practicar */
+  --rosa-hondo: #d900d9; /* subrayado de señales, borde — nunca texto */
 
   --background: var(--papel);
   --foreground: var(--negro);
@@ -36,10 +46,12 @@
   --color-papel: var(--papel);
   --color-borde: var(--borde);
 
+  --color-celeste-marca: var(--celeste-marca);
   --color-celeste-claro: var(--celeste-claro);
   --color-celeste-medio: var(--celeste-medio);
   --color-celeste-hondo: var(--celeste-hondo);
 
+  --color-rosa-marca: var(--rosa-marca);
   --color-rosa-claro: var(--rosa-claro);
   --color-rosa-hondo: var(--rosa-hondo);
 

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import type { Analisis, EntradaAnalisis, EntradaHistorial } from "@/lib/types";
 import { ETIQUETA_RELACION, RELACIONES } from "@/lib/types";
@@ -85,8 +86,12 @@ export default function Home() {
   return (
     <main className="mx-auto flex w-full min-w-0 max-w-2xl flex-1 flex-col gap-6 p-4">
       <div>
-        <h1 className="font-display text-3xl font-semibold text-negro">PuenteSocial</h1>
-        <p className="mt-1 text-cuerpo text-negro-suave">Traducí lo que te quisieron decir.</p>
+        {/* El logo ya trae el nombre escrito con sus propios colores de marca.
+            El h1 real queda oculto para accesibilidad/SEO, sin duplicar el
+            texto en pantalla. */}
+        <h1 className="sr-only">PuenteSocial</h1>
+        <Image src="/logo.png" alt="" width={256} height={141} priority className="h-auto w-56" />
+        <p className="-mt-2 text-cuerpo text-negro-suave">Traducí lo que te quisieron decir.</p>
       </div>
 
       <div className="flex gap-2" role="tablist" aria-label="Sección">
@@ -103,9 +108,11 @@ export default function Home() {
             aria-selected={vista === v}
             onClick={() => setVista(v)}
             className={`min-h-[48px] rounded-full border px-4 py-2 text-secundario font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-celeste-hondo ${
-              vista === v
-                ? "border-negro bg-negro text-blanco"
-                : "border-borde bg-blanco text-negro hover:bg-papel"
+              vista !== v
+                ? "border-borde bg-blanco text-negro hover:bg-papel"
+                : v === "practicar"
+                  ? "border-rosa-hondo bg-rosa-claro text-negro"
+                  : "border-negro bg-negro text-blanco"
             }`}
           >
             {etiqueta}

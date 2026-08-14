@@ -80,7 +80,7 @@ export default function Practicar() {
             onClick={() => elegirAmbito(a)}
             className={`min-h-[48px] rounded-full border px-4 py-2 text-secundario font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-celeste-hondo ${
               ambito === a
-                ? "border-negro bg-negro text-blanco"
+                ? "border-rosa-hondo bg-rosa-claro text-negro"
                 : "border-borde bg-blanco text-negro hover:bg-papel"
             }`}
           >
