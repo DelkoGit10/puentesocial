@@ -1,4 +1,4 @@
-# SocialBridge AI — Alcance v0.1 (CoderCup)
+# PuenteSocial — Alcance v0.1 (CoderCup)
 
 **Fecha de corte:** domingo 23/8
 **Regla madre:** si algo no se puede mostrar funcionando en el video de 2 minutos, no se construye.

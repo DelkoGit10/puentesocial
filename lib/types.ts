@@ -1,4 +1,4 @@
-// Contrato de datos de SocialBridge AI.
+// Contrato de datos de PuenteSocial.
 // Derivado del esquema validado sobre 50 casos (40 + 10 holdout).
 // Si cambia el prompt, cambia esto primero.
 
@@ -107,6 +107,40 @@ export interface EntradaHistorial {
    * lo tienen — hay que seguir mostrándolas sin romper.
    */
   analisis?: Analisis;
+}
+
+// Práctica: contenido precalculado (nunca llama a /api/analizar en vivo).
+export const AMBITOS = ["escuela", "trabajo", "familia", "relaciones"] as const;
+export type Ambito = (typeof AMBITOS)[number];
+
+export const ETIQUETA_AMBITO: Record<Ambito, string> = {
+  escuela: "Escuela",
+  trabajo: "Trabajo",
+  familia: "Familia",
+  relaciones: "Relaciones",
+};
+
+export interface OpcionInterpretacion {
+  texto: string;
+  correcta: boolean;
+}
+
+export interface CasoPractica {
+  id: string;
+  ambito: Ambito;
+  mensaje: string;
+  relacion: string;
+  canal: string;
+  contexto: string;
+  opciones: OpcionInterpretacion[];
+  analisis: Analisis;
+}
+
+/** Progreso de práctica en localStorage. Separado del historial real: no
+ * cuenta para el patrón personal, que describe lo que el usuario trajo de
+ * su vida, no ejercicios. */
+export interface ProgresoPractica {
+  [casoId: string]: { acerto: boolean; fecha: number };
 }
 
 export const LIMITES = {

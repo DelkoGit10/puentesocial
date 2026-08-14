@@ -1,23 +1,82 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Neutros */
+  --negro: #111214; /* todo el texto */
+  --negro-suave: #5c6066; /* texto secundario */
+  --blanco: #ffffff; /* tarjetas */
+  --papel: #fbfcfd; /* fondo de página */
+  --borde: #e6eaee; /* hairlines */
+
+  /* Celeste — estructura, certeza, acciones */
+  --celeste-claro: #dff1fa; /* fondos de píldora */
+  --celeste-medio: #9cd2ea; /* bordes, subrayados suaves */
+  --celeste-hondo: #17698f; /* subrayado de señales, foco, énfasis — nunca texto */
+
+  /* Rosa — solo alertas y el resaltado de señales */
+  --rosa-claro: #fbe2ea; /* fondo de ANGUSTIA_GENUINA */
+  --rosa-hondo: #9e2a47; /* subrayado de señales, borde — nunca texto */
+
+  --background: var(--papel);
+  --foreground: var(--negro);
+
   /* Un solo tema, a propósito: los componentes solo tienen colores para modo
      claro. Sin esto, el navegador "adivina" un oscurecido automático para
-     los inputs y queda con contraste roto (placeholder casi invisible). */
+     los inputs y queda con contraste roto. */
   color-scheme: light;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-negro: var(--negro);
+  --color-negro-suave: var(--negro-suave);
+  --color-blanco: var(--blanco);
+  --color-papel: var(--papel);
+  --color-borde: var(--borde);
+
+  --color-celeste-claro: var(--celeste-claro);
+  --color-celeste-medio: var(--celeste-medio);
+  --color-celeste-hondo: var(--celeste-hondo);
+
+  --color-rosa-claro: var(--rosa-claro);
+  --color-rosa-hondo: var(--rosa-hondo);
+
+  --font-sans: var(--font-ibm-plex-sans);
+  --font-mono: var(--font-ibm-plex-mono);
+  --font-display: var(--font-fraunces);
+
+  /* Escala móvil, mínimos absolutos. Los inputs usan text-base (16px) de
+     Tailwind directamente: son el piso, no necesitan un token propio. */
+  --text-cuerpo: 17px;
+  --text-cuerpo--line-height: 1.6;
+  --text-secundario: 15px;
+  --text-secundario--line-height: 1.5;
+  --text-pildora: 13px;
+  --text-pildora--line-height: 1.4;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Bloques del resultado escalonados al entrar. Puramente decorativo: si el
+   usuario pide menos movimiento, no animamos nada. */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes entrada-escalonada {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animar-entrada {
+    animation: entrada-escalonada 240ms ease-out both;
+  }
 }

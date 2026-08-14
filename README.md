@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PuenteSocial
 
-## Getting Started
+> Traducí lo que te quisieron decir.
 
-First, run the development server:
+Pegás un mensaje que recibiste y no sabés cómo interpretar, y devuelve qué dice literalmente,
+qué probablemente quiso decir la otra persona, qué señales del texto lo indican, y tres formas
+de responder. Pensado para personas que leen el lenguaje de forma literal y para quienes la
+ansiedad social hace difícil descifrar el subtexto.
+
+## Cómo correr esto en local
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Necesitás un `.env.local` con `ANTHROPIC_API_KEY` (ver `app/api/analizar/route.ts`).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Estructura
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `app/` — la app Next.js (formulario, resultado, historial, práctica)
+- `components/` — UI compartida
+- `lib/` — tipos, el prompt del sistema, historial, patrón, práctica
+- `eval/` — el set de evaluación (40 casos + 10 de holdout) y los scripts que lo corren
+- `docs/` — alcance del producto y el diseño del prompt
 
-## Learn More
+## El prompt es un contrato, no un detalle de implementación
 
-To learn more about Next.js, take a look at the following resources:
+`lib/prompt.ts` (espejo exacto de `eval/prompt_sistema.txt`) está validado sobre 50 casos:
+85% de acierto de categoría, 92% de acierto de intención revisado a mano. Si necesitás tocar el
+prompt, hacelo en `eval/prompt_sistema.txt`, corré `eval/04-evaluar.py` sobre los 40 + 10 de
+holdout, re-puntuá la intención a mano, y recién después actualizá `lib/prompt.ts` con el
+resultado ya validado. Los archivos `eval/resultados-*.json` son la evidencia de esa validación.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Desplegado en Vercel. La API key vive únicamente en las variables de entorno del proyecto en
+Vercel — nunca en el repo.

@@ -1,0 +1,393 @@
+{
+  "version": "1.0",
+  "notas": "Set de práctica: 24 mensajes (6 por ámbito) para lib/practica.json. Se corre una sola vez con eval/04-evaluar.py para precalcular el análisis completo — la sección Practicar nunca llama a /api/analizar en vivo. Ningún caso acá dispara bandera_seguridad a propósito: el riesgo relacional no es material de ejercicio.",
+  "casos": [
+    {
+      "id": "escuela-1",
+      "ambito": "escuela",
+      "mensaje": "Qué bueno que avisaste con tiempo que hoy era la entrega.",
+      "relacion": "profesor",
+      "canal": "presencial",
+      "contexto": "Entregué el trabajo final con dos días de atraso sin avisar antes.",
+      "categoria_esperada": "ironia",
+      "ambiguedad_esperada": "baja",
+      "intencion_esperada": "Reproche irónico por no avisar la demora, no un elogio real.",
+      "opciones": [
+        { "texto": "Está señalando, en tono irónico, que no avisaste la demora a tiempo.", "correcta": true },
+        { "texto": "Está genuinamente agradecido de que hayas avisado con anticipación.", "correcta": false },
+        { "texto": "Es un comentario neutro sobre los tiempos de entrega en general.", "correcta": false }
+      ]
+    },
+    {
+      "id": "escuela-2",
+      "ambito": "escuela",
+      "mensaje": "Uy, no entendí nada de la guía de estudio para el parcial.",
+      "relacion": "compañero de clase",
+      "canal": "WhatsApp",
+      "contexto": "Está sentado al lado mío y yo ya rendí esa materia el año pasado.",
+      "categoria_esperada": "pedido_indirecto",
+      "ambiguedad_esperada": "media",
+      "intencion_esperada": "Probablemente busca que le expliques la guía, sin pedirlo directamente.",
+      "opciones": [
+        { "texto": "Solo está comentando en voz alta que la guía es difícil, sin esperar nada de vos.", "correcta": false },
+        { "texto": "Probablemente espera que le ayudes a entender la guía, aunque no lo pida directamente.", "correcta": true },
+        { "texto": "Te está avisando que probablemente no rinda el parcial.", "correcta": false }
+      ]
+    },
+    {
+      "id": "escuela-3",
+      "ambito": "escuela",
+      "mensaje": "Se entiende la idea, pero le faltó desarrollo.",
+      "relacion": "profesor",
+      "canal": "mail",
+      "contexto": "Me devolvió el ensayo que entregué para la materia.",
+      "categoria_esperada": "critica_suave",
+      "ambiguedad_esperada": "baja",
+      "intencion_esperada": "Hay una objeción real de fondo, atenuada por la cortesía del comentario.",
+      "opciones": [
+        { "texto": "El ensayo está aprobado sin objeciones, es solo un comentario al pasar.", "correcta": false },
+        { "texto": "Hay una crítica real de contenido, suavizada: el ensayo necesita más desarrollo.", "correcta": true },
+        { "texto": "El profesor no leyó el ensayo completo.", "correcta": false }
+      ]
+    },
+    {
+      "id": "escuela-4",
+      "ambito": "escuela",
+      "mensaje": "El examen se pasa del lunes al miércoles.",
+      "relacion": "profesor",
+      "canal": "mail",
+      "contexto": "Nos habían avisado la fecha del examen la semana pasada.",
+      "categoria_esperada": "literal",
+      "ambiguedad_esperada": "baja",
+      "intencion_esperada": "Es exactamente lo que dice: información operativa, sin subtexto.",
+      "opciones": [
+        { "texto": "Es información operativa. No hay nada escondido acá.", "correcta": true },
+        { "texto": "El cambio de fecha es una señal de que el profesor está descontento con el curso.", "correcta": false },
+        { "texto": "En realidad quiere decir que el examen se cancela.", "correcta": false }
+      ]
+    },
+    {
+      "id": "escuela-5",
+      "ambito": "escuela",
+      "mensaje": "No puedo prestarte mis apuntes esta vez, los necesito para estudiar yo.",
+      "relacion": "compañero de clase",
+      "canal": "WhatsApp",
+      "contexto": "Le pedí los apuntes de la clase que me perdí.",
+      "categoria_esperada": "limite",
+      "ambiguedad_esperada": "baja",
+      "intencion_esperada": "Es un límite claro sobre su propia disponibilidad, no un rechazo personal.",
+      "opciones": [
+        { "texto": "Está marcando un límite sobre sus propios apuntes, no es nada personal contra vos.", "correcta": true },
+        { "texto": "Está buscando una excusa para no ayudarte nunca más.", "correcta": false },
+        { "texto": "Te está pidiendo que le prestes tus apuntes a cambio.", "correcta": false }
+      ]
+    },
+    {
+      "id": "escuela-6",
+      "ambito": "escuela",
+      "mensaje": "Como veas.",
+      "relacion": "compañero de clase",
+      "canal": "WhatsApp",
+      "contexto": "Le propuse cambiar el día para juntarnos a estudiar.",
+      "categoria_esperada": "ambiguedad_genuina",
+      "ambiguedad_esperada": "alta",
+      "intencion_esperada": "Puede ser flexibilidad real o desinterés; el texto solo no alcanza para saberlo.",
+      "opciones": [
+        { "texto": "Le da exactamente lo mismo, es indiferencia total al plan.", "correcta": false },
+        { "texto": "No se puede saber con certeza si es flexibilidad genuina o desgano; conviene preguntar.", "correcta": true },
+        { "texto": "Está de acuerdo entusiasmado con el cambio de día.", "correcta": false }
+      ]
+    },
+
+    {
+      "id": "trabajo-1",
+      "ambito": "trabajo",
+      "mensaje": "Justo lo que nos faltaba, un problema más.",
+      "relacion": "compañero de trabajo",
+      "canal": "Slack",
+      "contexto": "Le avisé que el servidor de pruebas se cayó de nuevo, media hora antes de la demo.",
+      "categoria_esperada": "ironia",
+      "ambiguedad_esperada": "baja",
+      "intencion_esperada": "Fastidio compartido con la situación, no un reproche hacia vos.",
+      "opciones": [
+        { "texto": "Está expresando fastidio por la mala noticia, no te está reprochando nada a vos.", "correcta": true },
+        { "texto": "Está genuinamente contento de tener un desafío técnico más.", "correcta": false },
+        { "texto": "Te está pidiendo que soluciones el problema de inmediato, sin importar cómo.", "correcta": false }
+      ]
+    },
+    {
+      "id": "trabajo-2",
+      "ambito": "trabajo",
+      "mensaje": "No tengo ni idea de cómo armar la planilla de gastos.",
+      "relacion": "compañero de trabajo",
+      "canal": "presencial",
+      "contexto": "Está sentado a mi lado y yo armo esas planillas todas las semanas.",
+      "categoria_esperada": "pedido_indirecto",
+      "ambiguedad_esperada": "media",
+      "intencion_esperada": "Probablemente busca que lo ayudes, sin pedirlo de forma explícita.",
+      "opciones": [
+        { "texto": "Solo está pensando en voz alta, sin esperar que hagas nada.", "correcta": false },
+        { "texto": "Probablemente espera que le muestres cómo armarla, aunque no lo pida directamente.", "correcta": true },
+        { "texto": "Te está avisando que no va a entregar la planilla esta semana.", "correcta": false }
+      ]
+    },
+    {
+      "id": "trabajo-3",
+      "ambito": "trabajo",
+      "mensaje": "Está bien encaminado, aunque le faltan un par de ajustes.",
+      "relacion": "jefe",
+      "canal": "mail",
+      "contexto": "Le mandé el primer borrador de la propuesta para el cliente.",
+      "categoria_esperada": "critica_suave",
+      "ambiguedad_esperada": "baja",
+      "intencion_esperada": "Hay objeciones concretas de fondo, atenuadas por el tono constructivo.",
+      "opciones": [
+        { "texto": "La propuesta está aprobada tal cual está.", "correcta": false },
+        { "texto": "Hay ajustes concretos pendientes antes de que la propuesta esté lista.", "correcta": true },
+        { "texto": "El jefe no tuvo tiempo de leer la propuesta completa.", "correcta": false }
+      ]
+    },
+    {
+      "id": "trabajo-4",
+      "ambito": "trabajo",
+      "mensaje": "La reunión de mañana se cambió de las 10 a las 14.",
+      "relacion": "compañero de trabajo",
+      "canal": "Slack",
+      "contexto": "Estaba agendada para la mañana.",
+      "categoria_esperada": "literal",
+      "ambiguedad_esperada": "baja",
+      "intencion_esperada": "Información pura, sin carga emocional ni subtexto.",
+      "opciones": [
+        { "texto": "Es información operativa. No hay nada escondido acá.", "correcta": true },
+        { "texto": "El cambio de horario es una señal de que algo salió mal con el cliente.", "correcta": false },
+        { "texto": "En realidad está insinuando que la reunión se cancela.", "correcta": false }
+      ]
+    },
+    {
+      "id": "trabajo-5",
+      "ambito": "trabajo",
+      "mensaje": "Dale, hacelo como quieras, total da igual lo que yo piense.",
+      "relacion": "compañero de trabajo",
+      "canal": "Slack",
+      "contexto": "Discutimos por el enfoque del proyecto y yo terminé decidiendo por mi cuenta.",
+      "categoria_esperada": "conflicto",
+      "ambiguedad_esperada": "baja",
+      "intencion_esperada": "No es un permiso literal: es enojo y retiro de la conversación.",
+      "opciones": [
+        { "texto": "Está genuinamente de acuerdo con que decidas vos sin más vueltas.", "correcta": false },
+        { "texto": "Está enojado y se está retirando de la conversación, no dando un permiso real.", "correcta": true },
+        { "texto": "Te está pidiendo que le expliques de nuevo el enfoque del proyecto.", "correcta": false }
+      ]
+    },
+    {
+      "id": "trabajo-6",
+      "ambito": "trabajo",
+      "mensaje": "Dale, después lo vemos.",
+      "relacion": "jefe",
+      "canal": "presencial",
+      "contexto": "Le propuse una idea nueva para mejorar un proceso del equipo.",
+      "categoria_esperada": "desinteres",
+      "ambiguedad_esperada": "media",
+      "intencion_esperada": "Cierre cortés: probablemente no se retome la idea sin que vos insistas.",
+      "opciones": [
+        { "texto": "Le interesó mucho la idea y la va a poner en marcha pronto.", "correcta": false },
+        { "texto": "Es un cierre cortés; es poco probable que se retome sin que vos vuelvas a proponerla.", "correcta": true },
+        { "texto": "Está pidiendo más tiempo para pensar y va a responder por escrito.", "correcta": false }
+      ]
+    },
+
+    {
+      "id": "familia-1",
+      "ambito": "familia",
+      "mensaje": "Qué considerado de tu parte avisar con tanta anticipación.",
+      "relacion": "familiar",
+      "canal": "WhatsApp",
+      "contexto": "Cancelé el almuerzo familiar del domingo una hora antes.",
+      "categoria_esperada": "ironia",
+      "ambiguedad_esperada": "baja",
+      "intencion_esperada": "Reproche irónico por la cancelación tardía, no un agradecimiento real.",
+      "opciones": [
+        { "texto": "Está genuinamente agradecido por el aviso.", "correcta": false },
+        { "texto": "Está reprochando, con ironía, que avisaste demasiado tarde.", "correcta": true },
+        { "texto": "Es un comentario neutro sobre organizar mejor los planes familiares.", "correcta": false }
+      ]
+    },
+    {
+      "id": "familia-2",
+      "ambito": "familia",
+      "mensaje": "Uy, no sé cómo hacer para actualizar el celular.",
+      "relacion": "familiar",
+      "canal": "presencial",
+      "contexto": "Mi papá me lo comenta mientras yo estoy al lado con mi notebook.",
+      "categoria_esperada": "pedido_indirecto",
+      "ambiguedad_esperada": "media",
+      "intencion_esperada": "Probablemente busca que lo ayudes ahí mismo, sin pedirlo directamente.",
+      "opciones": [
+        { "texto": "Solo está comentando su frustración con la tecnología, sin esperar ayuda.", "correcta": false },
+        { "texto": "Probablemente espera que lo ayudes a actualizarlo en ese momento.", "correcta": true },
+        { "texto": "Te está avisando que va a comprar un celular nuevo.", "correcta": false }
+      ]
+    },
+    {
+      "id": "familia-3",
+      "ambito": "familia",
+      "mensaje": "Hoy no tengo cabeza para hablar de eso, necesito descansar.",
+      "relacion": "familiar",
+      "canal": "WhatsApp",
+      "contexto": "Le mandé un mensaje para contarle un problema que tengo.",
+      "categoria_esperada": "limite",
+      "ambiguedad_esperada": "baja",
+      "intencion_esperada": "Es un límite sobre su propia capacidad hoy, no un rechazo a escucharte en general.",
+      "opciones": [
+        { "texto": "Está marcando que hoy no tiene la energía, no que no le importe el tema.", "correcta": true },
+        { "texto": "Está evitando el tema para siempre.", "correcta": false },
+        { "texto": "Te está pidiendo que le cuentes el problema de otra persona.", "correcta": false }
+      ]
+    },
+    {
+      "id": "familia-4",
+      "ambito": "familia",
+      "mensaje": "Guardé la llave de repuesto en el cajón de la cocina, al lado de los cubiertos.",
+      "relacion": "familiar",
+      "canal": "WhatsApp",
+      "contexto": "Se iba de viaje por unos días y me avisó dónde la dejaba, por si necesitaba entrar a su casa a regar las plantas.",
+      "categoria_esperada": "literal",
+      "ambiguedad_esperada": "baja",
+      "intencion_esperada": "Es exactamente lo que dice: información operativa, sin ninguna carga extra.",
+      "opciones": [
+        { "texto": "Es información operativa para el viaje. No hay nada escondido acá.", "correcta": true },
+        { "texto": "En realidad está probando si vas a entrar a su casa sin avisar.", "correcta": false },
+        { "texto": "Es una forma indirecta de pedirte que le riegues más plantas de las que dijo.", "correcta": false }
+      ]
+    },
+    {
+      "id": "familia-5",
+      "ambito": "familia",
+      "mensaje": "Está bien.",
+      "relacion": "familiar",
+      "canal": "WhatsApp",
+      "contexto": "Le pregunté si le había molestado que no fuera al cumpleaños de mi primo.",
+      "categoria_esperada": "ambiguedad_genuina",
+      "ambiguedad_esperada": "alta",
+      "intencion_esperada": "Puede ser aceptación genuina o molestia contenida; no se puede saber solo con el texto.",
+      "opciones": [
+        { "texto": "Definitivamente está furioso, aunque no lo diga.", "correcta": false },
+        { "texto": "No se puede saber con certeza si está realmente bien o algo molesto; conviene preguntar más.", "correcta": true },
+        { "texto": "Está totalmente despreocupado por el tema.", "correcta": false }
+      ]
+    },
+    {
+      "id": "familia-6",
+      "ambito": "familia",
+      "mensaje": "Como siempre, todo depende de tus planes.",
+      "relacion": "familiar",
+      "canal": "WhatsApp",
+      "contexto": "Cambié la fecha de una reunión familiar por segunda vez este mes.",
+      "categoria_esperada": "conflicto",
+      "ambiguedad_esperada": "baja",
+      "intencion_esperada": "El 'como siempre' marca un reclamo acumulado, no solo por esta vez.",
+      "opciones": [
+        { "texto": "Es un reclamo por un patrón repetido, no solo por este cambio puntual.", "correcta": true },
+        { "texto": "Está de acuerdo en que vos decidas siempre la fecha.", "correcta": false },
+        { "texto": "Es un comentario neutro sobre organización familiar, sin ninguna molestia.", "correcta": false }
+      ]
+    },
+
+    {
+      "id": "relaciones-1",
+      "ambito": "relaciones",
+      "mensaje": "Qué lindo gesto, acordarte justo hoy.",
+      "relacion": "pareja",
+      "canal": "WhatsApp",
+      "contexto": "Me olvidé de nuestro aniversario de novios.",
+      "categoria_esperada": "ironia",
+      "ambiguedad_esperada": "baja",
+      "intencion_esperada": "Reproche irónico por haberse olvidado la fecha, no un elogio real.",
+      "opciones": [
+        { "texto": "Está genuinamente contenta con el gesto.", "correcta": false },
+        { "texto": "Está reprochando, con ironía, que te olvidaste de la fecha.", "correcta": true },
+        { "texto": "Es un comentario neutro sobre cómo celebrar aniversarios.", "correcta": false }
+      ]
+    },
+    {
+      "id": "relaciones-2",
+      "ambito": "relaciones",
+      "mensaje": "Tenemos que planear un viaje juntos en algún momento.",
+      "relacion": "pareja",
+      "canal": "presencial",
+      "contexto": "Charlábamos sobre lugares que nos gustaría conocer, sin fecha ni plan concreto.",
+      "categoria_esperada": "cortesia_formula",
+      "ambiguedad_esperada": "baja",
+      "intencion_esperada": "Es una fórmula de deseo compartido, no un plan concreto todavía.",
+      "opciones": [
+        { "texto": "Es un gesto de cariño sobre el futuro, no implica que ya haya un plan concreto.", "correcta": true },
+        { "texto": "Ya tiene el viaje reservado y te lo va a contar pronto.", "correcta": false },
+        { "texto": "Está evitando hablar de otro tema más importante.", "correcta": false }
+      ]
+    },
+    {
+      "id": "relaciones-3",
+      "ambito": "relaciones",
+      "mensaje": "Ah, bueno.",
+      "relacion": "pareja",
+      "canal": "WhatsApp",
+      "contexto": "Le conté con entusiasmo sobre un proyecto personal que empecé.",
+      "categoria_esperada": "desinteres",
+      "ambiguedad_esperada": "media",
+      "intencion_esperada": "La brevedad, desproporcionada al entusiasmo del mensaje, sugiere poco interés en el momento.",
+      "opciones": [
+        { "texto": "Está tan entusiasmada como vos, solo que lo expresa distinto.", "correcta": false },
+        { "texto": "La respuesta corta sugiere que no le generó demasiado interés en ese momento.", "correcta": true },
+        { "texto": "Está pidiendo más detalles sobre el proyecto antes de opinar.", "correcta": false }
+      ]
+    },
+    {
+      "id": "relaciones-4",
+      "ambito": "relaciones",
+      "mensaje": "Llego a las 20 hs a tu casa, salgo del trabajo a las 19.",
+      "relacion": "pareja",
+      "canal": "WhatsApp",
+      "contexto": "Habíamos quedado en vernos a la noche.",
+      "categoria_esperada": "literal",
+      "ambiguedad_esperada": "baja",
+      "intencion_esperada": "Es exactamente lo que dice, información operativa sin subtexto.",
+      "opciones": [
+        { "texto": "Es información operativa sobre el horario. No hay nada escondido acá.", "correcta": true },
+        { "texto": "En realidad está buscando una excusa para no verse.", "correcta": false },
+        { "texto": "Es una señal de que está enojada por algo previo.", "correcta": false }
+      ]
+    },
+    {
+      "id": "relaciones-5",
+      "ambito": "relaciones",
+      "mensaje": "Nada, no importa.",
+      "relacion": "pareja",
+      "canal": "presencial",
+      "contexto": "Empezó a decir algo sobre cómo se sentía y se frenó a mitad de la frase.",
+      "categoria_esperada": "ambiguedad_genuina",
+      "ambiguedad_esperada": "alta",
+      "intencion_esperada": "Puede ser que decidió no insistir sin drama, o que hay algo que prefiere no decir; no se sabe con el texto solo.",
+      "opciones": [
+        { "texto": "Seguro que no era nada importante, mejor no preguntar más.", "correcta": false },
+        { "texto": "No se puede saber si de verdad no importa o si prefiere no decirlo; vale la pena preguntar con calma.", "correcta": true },
+        { "texto": "Está completamente enojada y no quiere hablar nunca más del tema.", "correcta": false }
+      ]
+    },
+    {
+      "id": "relaciones-6",
+      "ambito": "relaciones",
+      "mensaje": "Está bueno el plan, aunque no es lo que hubiera elegido yo.",
+      "relacion": "pareja",
+      "canal": "WhatsApp",
+      "contexto": "Le propuse un plan para el sábado y ya lo organicé.",
+      "categoria_esperada": "critica_suave",
+      "ambiguedad_esperada": "media",
+      "intencion_esperada": "Hay una reserva real sobre el plan, aunque acepta seguir adelante.",
+      "opciones": [
+        { "texto": "Está totalmente conforme con el plan tal cual está.", "correcta": false },
+        { "texto": "Acepta el plan pero con una reserva real: no era lo que hubiera preferido.", "correcta": true },
+        { "texto": "Está pidiendo que canceles el plan directamente.", "correcta": false }
+      ]
+    }
+  ]
+}

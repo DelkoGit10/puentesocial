@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Evaluación del motor de traducción social de SocialBridge AI.
+Evaluación del motor de traducción social de PuenteSocial.
 
 Uso:
     pip install anthropic
