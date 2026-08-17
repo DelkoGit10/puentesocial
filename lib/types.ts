@@ -162,11 +162,43 @@ export interface TurnoDialogo {
 export interface RespuestaDialogo {
   mensaje: string;
   fin: boolean;
+  /** true solo cuando el cierre fue por el resguardo de riesgo real, no un
+   * cierre natural de escena. La UI usa esto para no ofrecer una devolución
+   * de estilo de comunicación justo después de un momento así. */
+  riesgo?: boolean;
 }
 
 export function esRespuestaDialogoValida(x: unknown): x is RespuestaDialogo {
   const r = x as RespuestaDialogo;
   return !!r && typeof r.mensaje === "string" && typeof r.fin === "boolean";
+}
+
+/** Devolución sobre cómo respondió el usuario en una escena de diálogo.
+ * Nunca diagnostica ni puntúa — describe patrones del texto y ofrece
+ * alternativas, con el mismo criterio de "ni cortante ni verborrágico". */
+export interface ObservacionDevolucion {
+  dijiste: string;
+  efecto: string;
+  alternativa: string;
+}
+
+export interface DevolucionDialogo {
+  resumen: string;
+  observaciones: ObservacionDevolucion[];
+  cierre: string;
+}
+
+export function esDevolucionValida(x: unknown): x is DevolucionDialogo {
+  const d = x as DevolucionDialogo;
+  return (
+    !!d &&
+    typeof d.resumen === "string" &&
+    Array.isArray(d.observaciones) &&
+    d.observaciones.every(
+      (o) => typeof o.dijiste === "string" && typeof o.efecto === "string" && typeof o.alternativa === "string"
+    ) &&
+    typeof d.cierre === "string"
+  );
 }
 
 export const LIMITES_DIALOGO = {

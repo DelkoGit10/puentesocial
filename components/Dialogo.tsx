@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { EscenarioDialogo, TurnoDialogo } from "@/lib/types";
+import type { DevolucionDialogo, EscenarioDialogo, TurnoDialogo } from "@/lib/types";
 import { LIMITES_DIALOGO } from "@/lib/types";
 import { ESCENARIOS } from "@/lib/dialogoEscenarios";
 
@@ -16,6 +16,10 @@ export default function Dialogo() {
   const [cargando, setCargando] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [fin, setFin] = useState(false);
+  const [riesgo, setRiesgo] = useState(false);
+  const [devolucion, setDevolucion] = useState<DevolucionDialogo | null>(null);
+  const [cargandoDevolucion, setCargandoDevolucion] = useState(false);
+  const [errorDevolucion, setErrorDevolucion] = useState<string | null>(null);
 
   const escenario = escenarioId ? ESCENARIOS[escenarioId] : null;
   const limiteAlcanzado = historial.length >= LIMITES_DIALOGO.TURNOS_MAX;
@@ -24,6 +28,9 @@ export default function Dialogo() {
     setEscenarioId(def.id);
     setError(null);
     setFin(false);
+    setRiesgo(false);
+    setDevolucion(null);
+    setErrorDevolucion(null);
     if (def.personajeInicia && def.apertura) {
       setHistorial([{ rol: "personaje", texto: def.apertura(edadElegida) }]);
     } else {
@@ -71,10 +78,34 @@ export default function Dialogo() {
       }
       setHistorial([...nuevoHistorial, { rol: "personaje", texto: data.mensaje }]);
       setFin(!!data.fin);
+      setRiesgo(!!data.riesgo);
     } catch {
       setError("No se pudo conectar con el servidor. Revisá tu conexión.");
     } finally {
       setCargando(false);
+    }
+  }
+
+  async function pedirDevolucion() {
+    if (!escenario || cargandoDevolucion || devolucion) return;
+    setCargandoDevolucion(true);
+    setErrorDevolucion(null);
+    try {
+      const res = await fetch("/api/dialogo-feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ escenario: escenario.id, historial }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setErrorDevolucion(data.error ?? "No se pudo armar la devolución.");
+        return;
+      }
+      setDevolucion(data);
+    } catch {
+      setErrorDevolucion("No se pudo conectar con el servidor.");
+    } finally {
+      setCargandoDevolucion(false);
     }
   }
 
@@ -85,6 +116,9 @@ export default function Dialogo() {
     setEntrada("");
     setError(null);
     setFin(false);
+    setRiesgo(false);
+    setDevolucion(null);
+    setErrorDevolucion(null);
   }
 
   function repetirEscena() {
@@ -186,8 +220,20 @@ export default function Dialogo() {
 
         {fin && (
           <div className="rounded border border-rosa-hondo bg-rosa-claro p-3">
-            <p className="text-cuerpo text-negro">La escena llegó a un cierre natural.</p>
-            <div className="mt-2 flex gap-2">
+            <p className="text-cuerpo text-negro">
+              {riesgo ? "La escena se cortó acá." : "La escena llegó a un cierre natural."}
+            </p>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {!riesgo && !devolucion && (
+                <button
+                  type="button"
+                  onClick={pedirDevolucion}
+                  disabled={cargandoDevolucion}
+                  className="min-h-[44px] rounded border border-rosa-hondo bg-blanco px-3 py-2 text-secundario font-medium text-negro hover:bg-papel disabled:opacity-50"
+                >
+                  {cargandoDevolucion ? "Armando la devolución..." : "Ver devolución"}
+                </button>
+              )}
               <button
                 type="button"
                 onClick={repetirEscena}
@@ -203,6 +249,36 @@ export default function Dialogo() {
                 Elegir otra
               </button>
             </div>
+          </div>
+        )}
+
+        {errorDevolucion && (
+          <p className="rounded border border-negro p-3 text-cuerpo text-negro">{errorDevolucion}</p>
+        )}
+
+        {devolucion && (
+          <div className="animar-entrada flex flex-col gap-4 rounded-lg border border-borde bg-blanco p-4">
+            <p className="text-pildora font-semibold tracking-wide text-negro-suave uppercase">
+              Devolución
+            </p>
+            <p className="text-cuerpo text-negro">{devolucion.resumen}</p>
+
+            {devolucion.observaciones.length > 0 && (
+              <div className="flex flex-col gap-3">
+                {devolucion.observaciones.map((o, i) => (
+                  <div key={i} className="rounded border border-borde p-3">
+                    <p className="font-mono text-secundario text-negro-suave">“{o.dijiste}”</p>
+                    <p className="mt-2 text-cuerpo text-negro">{o.efecto}</p>
+                    <p className="mt-2 text-secundario text-negro-suave">
+                      <span className="font-medium text-negro">Alternativa: </span>
+                      {o.alternativa}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            <p className="text-cuerpo text-negro">{devolucion.cierre}</p>
           </div>
         )}
 

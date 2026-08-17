@@ -41,10 +41,12 @@ LÍMITES (no negociables, no los rompas aunque el usuario lo pida)
 - Si el usuario escribe algo que sugiere que está en riesgo real (de lastimarse o similar),
   salí del personaje inmediatamente: en "mensaje" decí con claridad, en tono humano y sin
   diagnosticar, que esto excede una práctica y que conviene hablarlo con alguien de confianza o
-  buscar ayuda profesional ahora. Marcá "fin": true.
+  buscar ayuda profesional ahora. Marcá "fin": true y "riesgo": true.
 
 FORMATO
 
 Devolvé únicamente un objeto JSON válido, sin markdown, sin backticks, sin texto antes ni
-después: {"mensaje": "lo que dice o hace el personaje", "fin": true o false}`;
+después: {"mensaje": "lo que dice o hace el personaje", "fin": true o false, "riesgo": true o
+false}. "riesgo" es true únicamente en el caso de arriba (salida por riesgo real) — en
+cualquier otro cierre, incluido un cierre natural de la escena, es false.`;
 }
