@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import type { DevolucionDialogo, EscenarioDialogo, TurnoDialogo } from "@/lib/types";
-import { LIMITES_DIALOGO } from "@/lib/types";
+import type { DevolucionDialogo, EscenarioDialogo, TurnoConsulta, TurnoDialogo } from "@/lib/types";
+import { LIMITES_CONSULTA, LIMITES_DIALOGO } from "@/lib/types";
 import { ESCENARIOS } from "@/lib/dialogoEscenarios";
 
 type Paso = "elegir" | "edad" | "chat";
@@ -20,9 +20,15 @@ export default function Dialogo() {
   const [devolucion, setDevolucion] = useState<DevolucionDialogo | null>(null);
   const [cargandoDevolucion, setCargandoDevolucion] = useState(false);
   const [errorDevolucion, setErrorDevolucion] = useState<string | null>(null);
+  const [historialConsulta, setHistorialConsulta] = useState<TurnoConsulta[]>([]);
+  const [entradaConsulta, setEntradaConsulta] = useState("");
+  const [cargandoConsulta, setCargandoConsulta] = useState(false);
+  const [errorConsulta, setErrorConsulta] = useState<string | null>(null);
+  const [riesgoConsulta, setRiesgoConsulta] = useState(false);
 
   const escenario = escenarioId ? ESCENARIOS[escenarioId] : null;
   const limiteAlcanzado = historial.length >= LIMITES_DIALOGO.TURNOS_MAX;
+  const limiteConsultaAlcanzado = historialConsulta.length >= LIMITES_CONSULTA.TURNOS_MAX;
 
   function iniciarEscena(def: (typeof ESCENARIOS)[EscenarioDialogo], edadElegida?: string) {
     setEscenarioId(def.id);
@@ -31,6 +37,10 @@ export default function Dialogo() {
     setRiesgo(false);
     setDevolucion(null);
     setErrorDevolucion(null);
+    setHistorialConsulta([]);
+    setEntradaConsulta("");
+    setErrorConsulta(null);
+    setRiesgoConsulta(false);
     if (def.personajeInicia && def.apertura) {
       setHistorial([{ rol: "personaje", texto: def.apertura(edadElegida) }]);
     } else {
@@ -109,6 +119,44 @@ export default function Dialogo() {
     }
   }
 
+  async function enviarConsulta(e: React.FormEvent) {
+    e.preventDefault();
+    if (!escenario || !devolucion || !entradaConsulta.trim() || cargandoConsulta || limiteConsultaAlcanzado) return;
+
+    const nuevoHistorialConsulta: TurnoConsulta[] = [
+      ...historialConsulta,
+      { rol: "usuario", texto: entradaConsulta.trim() },
+    ];
+    setHistorialConsulta(nuevoHistorialConsulta);
+    setEntradaConsulta("");
+    setCargandoConsulta(true);
+    setErrorConsulta(null);
+
+    try {
+      const res = await fetch("/api/dialogo-consulta", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          escenario: escenario.id,
+          historialEscena: historial,
+          devolucion,
+          historialConsulta: nuevoHistorialConsulta,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setErrorConsulta(data.error ?? "Algo salió mal. Probá de nuevo.");
+        return;
+      }
+      setHistorialConsulta([...nuevoHistorialConsulta, { rol: "coach", texto: data.respuesta }]);
+      setRiesgoConsulta(!!data.riesgo);
+    } catch {
+      setErrorConsulta("No se pudo conectar con el servidor.");
+    } finally {
+      setCargandoConsulta(false);
+    }
+  }
+
   function volver() {
     setPaso("elegir");
     setEscenarioId(null);
@@ -119,6 +167,10 @@ export default function Dialogo() {
     setRiesgo(false);
     setDevolucion(null);
     setErrorDevolucion(null);
+    setHistorialConsulta([]);
+    setEntradaConsulta("");
+    setErrorConsulta(null);
+    setRiesgoConsulta(false);
   }
 
   function repetirEscena() {
@@ -280,6 +332,60 @@ export default function Dialogo() {
 
             <p className="text-cuerpo text-negro">{devolucion.cierre}</p>
           </div>
+        )}
+
+        {devolucion && historialConsulta.length > 0 && (
+          <div className="flex flex-col gap-3">
+            {historialConsulta.map((t, i) => (
+              <div
+                key={i}
+                className={`max-w-[85%] rounded-lg p-3 ${
+                  t.rol === "coach"
+                    ? "self-start border border-borde bg-blanco"
+                    : "self-end border border-celeste-medio bg-celeste-claro"
+                }`}
+              >
+                <p className="text-cuerpo text-negro">{t.texto}</p>
+              </div>
+            ))}
+            {cargandoConsulta && (
+              <div className="max-w-[85%] self-start rounded-lg border border-borde bg-blanco p-3">
+                <p className="text-cuerpo text-negro-suave italic">Escribiendo...</p>
+              </div>
+            )}
+          </div>
+        )}
+
+        {errorConsulta && (
+          <p className="rounded border border-negro p-3 text-cuerpo text-negro">{errorConsulta}</p>
+        )}
+
+        {devolucion && !riesgoConsulta && (
+          <form onSubmit={enviarConsulta} className="flex flex-col gap-2">
+            {limiteConsultaAlcanzado && (
+              <p className="text-secundario text-negro-suave">
+                Esta consulta ya fue larga. Si querés seguir, probá una escena nueva.
+              </p>
+            )}
+            <div className="flex gap-2">
+              <input
+                type="text"
+                maxLength={LIMITES_CONSULTA.MENSAJE_MAX}
+                placeholder="¿Alguna duda o comentario sobre esto?"
+                value={entradaConsulta}
+                onChange={(e) => setEntradaConsulta(e.target.value)}
+                disabled={cargandoConsulta || limiteConsultaAlcanzado}
+                className="min-h-[48px] min-w-0 flex-1 rounded border border-borde bg-blanco p-3 text-base text-negro placeholder:text-negro-suave focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-celeste-hondo disabled:opacity-50"
+              />
+              <button
+                type="submit"
+                disabled={cargandoConsulta || !entradaConsulta.trim() || limiteConsultaAlcanzado}
+                className="min-h-[48px] shrink-0 rounded border border-rosa-hondo bg-rosa-claro px-4 text-base font-medium text-negro hover:opacity-90 disabled:opacity-50"
+              >
+                Enviar
+              </button>
+            </div>
+          </form>
         )}
 
         {!fin && (

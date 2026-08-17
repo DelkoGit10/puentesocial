@@ -206,6 +206,29 @@ export const LIMITES_DIALOGO = {
   TURNOS_MAX: 30, // 15 idas y vueltas; corta antes de que se vuelva una charla sin fin
 } as const;
 
+/** Preguntas o comentarios del usuario sobre una devolución ya recibida.
+ * "coach" es el mismo observador que armó la devolución, no el personaje de
+ * la escena — la escena ya terminó. */
+export interface TurnoConsulta {
+  rol: "usuario" | "coach";
+  texto: string;
+}
+
+export interface RespuestaConsulta {
+  respuesta: string;
+  riesgo?: boolean;
+}
+
+export function esRespuestaConsultaValida(x: unknown): x is RespuestaConsulta {
+  const r = x as RespuestaConsulta;
+  return !!r && typeof r.respuesta === "string";
+}
+
+export const LIMITES_CONSULTA = {
+  MENSAJE_MAX: 500,
+  TURNOS_MAX: 12, // 6 idas y vueltas: es una consulta puntual, no una charla nueva
+} as const;
+
 export const LIMITES = {
   MENSAJE_MAX: 1200,
   MENSAJE_MIN: 2,
