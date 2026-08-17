@@ -3,6 +3,13 @@
 **Fecha de corte:** domingo 23/8
 **Regla madre:** si algo no se puede mostrar funcionando en el video de 2 minutos, no se construye.
 
+> **Nota post-v0.1:** este documento queda como registro de la decisión original de alcance
+> para la entrega de CoderCup. Una decisión se revisó después: el "Simulador de conversaciones
+> / roleplay" que se excluía más abajo se incorporó como "Diálogos guiados" dentro de
+> Practicar, con memoria de conversación acotada a esa función (no afecta a Traducir, que
+> sigue sin memoria). Se deja marcado en la lista original en vez de borrarlo, para que quede
+> el rastro de qué se decidió y cuándo se revisó.
+
 ---
 
 ## Qué es la v0.1, en una frase
@@ -30,7 +37,7 @@ indican, y tres formas de responder.
 - Audio, voz, análisis de tono sonoro
 - Video, expresiones faciales, señales no verbales
 - Análisis en tiempo real de conversaciones en curso
-- Simulador de conversaciones / roleplay
+- ~~Simulador de conversaciones / roleplay~~ — revisado, ver nota al inicio del documento
 - Wearable, app móvil nativa, APIs públicas
 - Panel institucional, licencias, pagos, planes
 - Multiidioma (solo español rioplatense en v0.1)

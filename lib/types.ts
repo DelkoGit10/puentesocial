@@ -143,6 +143,37 @@ export interface ProgresoPractica {
   [casoId: string]: { acerto: boolean; fecha: number };
 }
 
+// Diálogos guiados: la única parte de la app con memoria de conversación y
+// llamadas en vivo. Separado a propósito del resto (que no tiene memoria).
+export const ESCENARIOS_DIALOGO = [
+  "cumpleanos",
+  "aeropuerto",
+  "banco",
+  "calle",
+  "alguien_te_habla",
+] as const;
+export type EscenarioDialogo = (typeof ESCENARIOS_DIALOGO)[number];
+
+export interface TurnoDialogo {
+  rol: "usuario" | "personaje";
+  texto: string;
+}
+
+export interface RespuestaDialogo {
+  mensaje: string;
+  fin: boolean;
+}
+
+export function esRespuestaDialogoValida(x: unknown): x is RespuestaDialogo {
+  const r = x as RespuestaDialogo;
+  return !!r && typeof r.mensaje === "string" && typeof r.fin === "boolean";
+}
+
+export const LIMITES_DIALOGO = {
+  MENSAJE_MAX: 500,
+  TURNOS_MAX: 30, // 15 idas y vueltas; corta antes de que se vuelva una charla sin fin
+} as const;
+
 export const LIMITES = {
   MENSAJE_MAX: 1200,
   MENSAJE_MIN: 2,

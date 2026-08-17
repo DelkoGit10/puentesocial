@@ -5,9 +5,12 @@ import type { Ambito, CasoPractica, ProgresoPractica } from "@/lib/types";
 import { AMBITOS, ETIQUETA_AMBITO } from "@/lib/types";
 import { leerProgresoPractica, guardarProgresoPractica } from "@/lib/practicaProgreso";
 import ResultadoAnalisis from "@/components/ResultadoAnalisis";
+import Dialogo from "@/components/Dialogo";
 import practicaData from "@/lib/practica.json";
 
 const CASOS = practicaData.casos as unknown as CasoPractica[];
+
+type ModoPractica = "interpretar" | "dialogos";
 
 function mezclar<T>(arr: T[]): T[] {
   const copia = [...arr];
@@ -19,6 +22,7 @@ function mezclar<T>(arr: T[]): T[] {
 }
 
 export default function Practicar() {
+  const [modo, setModo] = useState<ModoPractica>("interpretar");
   const [ambito, setAmbito] = useState<Ambito>("escuela");
   const [indice, setIndice] = useState(0);
   const [elegida, setElegida] = useState<number | null>(null);
@@ -62,6 +66,41 @@ export default function Practicar() {
     setElegida(null);
   }
 
+  const modoToggle = (
+    <div className="flex gap-2" role="tablist" aria-label="Modo de práctica">
+      {(
+        [
+          ["interpretar", "Interpretar mensajes"],
+          ["dialogos", "Diálogos guiados"],
+        ] as const
+      ).map(([m, etiqueta]) => (
+        <button
+          key={m}
+          type="button"
+          role="tab"
+          aria-selected={modo === m}
+          onClick={() => setModo(m)}
+          className={`min-h-[48px] rounded-full border px-4 py-2 text-secundario font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-celeste-hondo ${
+            modo === m
+              ? "border-rosa-hondo bg-rosa-claro text-negro"
+              : "border-borde bg-blanco text-negro hover:bg-papel"
+          }`}
+        >
+          {etiqueta}
+        </button>
+      ))}
+    </div>
+  );
+
+  if (modo === "dialogos") {
+    return (
+      <div className="flex flex-col gap-5">
+        {modoToggle}
+        <Dialogo />
+      </div>
+    );
+  }
+
   if (!caso) return null;
 
   const revelado = elegida !== null;
@@ -70,6 +109,7 @@ export default function Practicar() {
 
   return (
     <div className="flex flex-col gap-5">
+      {modoToggle}
       <div className="flex flex-wrap gap-2" role="tablist" aria-label="Elegir ámbito">
         {AMBITOS.map((a) => (
           <button
