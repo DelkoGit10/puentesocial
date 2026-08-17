@@ -55,9 +55,11 @@
   --color-rosa-claro: var(--rosa-claro);
   --color-rosa-hondo: var(--rosa-hondo);
 
-  --font-sans: var(--font-ibm-plex-sans);
-  --font-mono: var(--font-ibm-plex-mono);
-  --font-display: var(--font-fraunces);
+  /* Nombres de familia directos de @fontsource (ver app/layout.tsx), no
+     variables de next/font/google. */
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-display: "Fraunces", ui-serif, serif;
 
   /* Escala móvil, mínimos absolutos. Los inputs usan text-base (16px) de
      Tailwind directamente: son el piso, no necesitan un token propio. */
