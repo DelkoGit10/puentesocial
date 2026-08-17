@@ -92,6 +92,9 @@ export default function Home() {
         <h1 className="sr-only">PuenteSocial</h1>
         <Image src="/logo.png" alt="" width={256} height={141} priority className="h-auto w-56" />
         <p className="-mt-2 text-cuerpo text-negro-suave">Traducí lo que te quisieron decir.</p>
+        <p className="mt-1 text-secundario text-negro-suave">
+          Tu mensaje se analiza al momento y no queda guardado en ningún servidor.
+        </p>
       </div>
 
       <div className="flex gap-2" role="tablist" aria-label="Sección">
